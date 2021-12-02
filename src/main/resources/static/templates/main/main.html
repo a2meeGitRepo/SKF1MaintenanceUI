@@ -1,0 +1,302 @@
+ <!-- END wrapper -->
+ <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+
+        <!-- Counter js  -->
+        <script src="../plugins/waypoints/jquery.waypoints.min.js"></script>
+        <script src="../plugins/counterup/jquery.counterup.min.js"></script>
+
+        <!--C3 Chart-->
+        <script type="text/javascript" src="plugins/d3/d3.min.js"></script>
+        <script type="text/javascript" src="plugins/c3/c3.min.js"></script>
+
+        <!--Echart Chart-->
+        <script src="plugins/echart/echarts-all.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="assets/pages/jquery.dashboard.js"></script>
+
+        <!-- App js -->
+     <style>
+.mydiv {  
+    position:absolute;
+    top:0;
+    overflow: hidden;
+    left:0;
+    width:100%;
+    height:150%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .8;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -22px;  /* -1 * image height / 2 */
+    display: block;   
+    }  
+    
+ li:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.avatar{
+ vertical-align: middle;
+  width: 5%;
+  height: 1%;
+  border-radius: 50%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<div ng-if="loader" class="mydiv"> 
+	 <img src="image/transparent-background-loading.gif" class="ajax-loader"/>
+</div> 
+        <!-- App js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+        <!-- Begin page -->
+        <div id="wrapper">
+			
+            <!-- Top Bar End -->
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <a  class="logo" ui-sref="main.home">
+                                <span>
+                                 
+                                    <h2 style="color: #f1f1f1;">  <img src="image/adplogo.jpg" style="width: 83%;"></h2>
+                                </span>
+                        <i>
+                            SFK
+                        </i>
+                    </a>
+                </div>
+
+                <nav class="navbar-custom">
+					
+                    <ul class="list-inline float-right mb-0">
+                    
+                    <li><a ui-sref='main.login' title="Log Out"><span ng-click="vm.doLogout()"> <i class="fa fa-sign-out" aria-hidden="true" style='font-size:24px; color:white;'></i></span></a></li>
+                    
+                    <li><a ui-sref='main.profileUpdate' title="profile">
+                    <img alt=" " class="avatar" src="assets/images/img_avatar.png" style="width: 50px; height: 50px;border-radius: 50%;">
+                    </a></li>
+                    <!-- <i class="fa fa-user" aria-hidden="true" style='font-size:24px; color:white;'></i> -->
+                    
+                    
+                              
+                        <!-- <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-bell noti-icon"></i>
+                                <span class="badge badge-pink noti-icon-badge">4</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
+                                item
+                                <div class="dropdown-item noti-title">
+                                    <h5><span class="badge badge-danger float-right">5</span>Notification</h5>
+                                </div>
+
+                                item
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
+                                    <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
+                                </a>
+
+                                item
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-info"><i class="icon-user"></i></div>
+                                    <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
+                                </a>
+
+                                item
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
+                                    <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
+                                </a>
+
+                                All
+                                <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
+                                    View All
+                                </a>
+
+                            </div>
+                        </li> --> 
+<li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle  waves-effect waves-light" ui-sref="main.notification" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="dripicons-bell noti-icon"></i>
+                            <span class="badge badge-pink rounded-circle noti-icon-badge">{{notificationCount}}</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-lg" style="">
+
+                            <div class="dropdown-header noti-title">
+                                <h5 class="text-overflow m-0"><span class="float-right">
+                                    <span class="badge badge-danger float-right"></span>
+                                    </span>Notification</h5>
+                            </div>
+
+
+                        </div>
+                    </li>
+                
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="dripicons-menu"></i>
+                            </button>
+                        </li>
+                      <!--   <li class="hide-phone app-search">
+                            <form role="search" class="">
+                                <input type="text" placeholder="Search..." class="form-control">
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </form>
+                        </li> -->
+                    </ul>
+
+                </nav>
+
+            </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="slimscroll-menu" id="remove-scroll">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu" id="side-menu">
+                          <!--   <li class="menu-title">Navigation</li> -->
+                              <li>
+                                <a href="javascript: void(0);" >
+                                    <i class=" mdi mdi-account"></i> <span > <b>{{vm.user.firstName}} {{vm.user.lastName}} </b><br></span>
+                                    
+                                </a>
+                         	  <ul class="nav-second-level" aria-expanded=false>
+                                   
+                              <li><a ui-sref='main.login'><span ng-click="vm.doLogout()"> <i class="mdi mdi-logout-variant"></i>Log out</span></a></li>
+                                 </ul> 
+                                 
+                            
+                            <li>
+                                <a href="javascript: void(0);" ui-sref="main.home">
+                                    <i class="fi-air-play"></i> <span > Dashboard </span>
+                                </a>
+                             <!--    <ul class="nav-second-level" aria-expanded=false>
+                                    <li><a ui-sref='main.home'> Hello .. ! {{vm.user.fname}} {{vm.user.lname}}</a></li>
+                                    <li><a ui-sref='main.login'><span ng-click="vm.doLogout()">Log out</a></li>
+                                </ul> -->
+                            </li>
+                            <li >
+                                <a href="javascript: void(0);"><i class="fi-server"></i> <span> Master</span> <span class="menu-arrow"></span></a>
+                                <ul   class="nav-second-level" aria-expanded="false">
+                                
+                                <li ng-if="vm.user.role.roleId==1 || vm.user.role.roleId==2 || vm.user.role.roleId==3 || vm.user.role.roleId==4 || vm.user.role.roleId==5 || vm.user.role.roleId==6 ||vm.user.role.roleId==7"><a ng-click="goToChangePassword(vm.user.user_id)"> <i class="fa fa-lock"></i>Change Password</a></li>
+ 								 <li ng-show="showCustomer">
+		                                <a href=" javascript: void(0);" ui-sref="main.customer">
+		                                    <i class="mdi mdi-package-variant"></i> <span> Customer </span>
+		                                </a>
+                          		  </li> 	
+                         		  	<li ng-show="showUserAndRoles"><a ui-sref="main.roleToUser" ui-sref-active="active" >  <i class="fa fa-users"></i>User Roles</a></li>
+                          		  	<li ng-show="showUserAndRoles"><a ui-sref="main.roleManagement" ui-sref-active="active" >  <i class="fa fa-users"></i>Role Access</a></li>
+                          		  	<li ng-show="showUserAndRoles"><a ui-sref="main.roleHierarchy" ui-sref-active="active" >  <i class="fa fa-users"></i>Role Hierarchy</a></li>
+                          		  	<li ng-show="showUserAndRoles"><a ui-sref="main.user" ui-sref-active="active" >  <i class="fa fa-users"></i>User</a></li>
+                          		  	<li ng-show="showEmployee"><a ui-sref="main.employee" ui-sref-active="active" >  <i class="fa fa-users"></i>Employee</a></li>
+                    				<li ng-show="showSpindle"><a ui-sref="main.spindle" ui-sref-active="active" >  <i class="fa fa-users"></i>Spindle</a></li>
+                      				<li ng-show="showServiceReason"><a ui-sref="main.serviceReason" ui-sref-active="active" >  <i class="fa fa-users"></i>Service Reason</a></li>
+                          		   <li  ng-show="showSpare"><a ui-sref="main.spare" ui-sref-active="active" >  <i class="fa fa-users"></i>Spare</a></li>
+                            	
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);"><i class="mdi mdi-poll-box"></i> <span> Transaction </span> <span class="menu-arrow"></span></a>
+                                 <ul class="nav-second-level" aria-expanded="false">
+                                                      		  	<li ng-show="showSpindleregistration"><a ui-sref="main.spindleServiceRequest" ui-sref-active="active" >  <i class="fa fa-users"></i>Spindle Service Request</a></li>
+                                                      		  		<li  ng-show="showSopUpdatation"><a ui-sref="main.sopManagerApproval" ui-sref-active="active" >  <i class="fa fa-users"></i>SOP Update</a></li>
+                            									<li  ng-show="showSopUpdatation"><a ui-sref="main.mailManager" ui-sref-active="active" >  <i class="fa fa-users"></i>Mail Manager</a></li>
+                            		  <li  ng-show="showOrder"><a ui-sref="main.order" ui-sref-active="active" >  <i class="fa fa-users"></i>Order</a></li>
+                              		  <li  ng-show="showOrder"><a ui-sref="main.spindleServiceCustomerRequest" ui-sref-active="active" >  <i class="fa fa-users"></i>Customer Reuest For Spindle Service</a></li>
+  
+                            
+                                </ul>
+                            </li>
+                         <!--    <li >
+                                <a href="javascript: void(0);"><i class="fa fa-drivers-license"></i> <span>Gate Pass</span> <span class="menu-arrow"></span></a>
+                                <ul   class="nav-second-level" aria-expanded="false">
+                                 <li ng-if="vm.user.role.roleId==2 || vm.user.role.roleId==3 ||vm.user.role.roleId==6||vm.user.role.roleId==7 "><a ui-sref="main.GatePassByUserRole" ui-sref-active="active" >  <i class="fa fa-users"></i>Gate Pass</a></li>
+                                  <li ng-if="vm.user.role.roleId==4"><a ui-sref="main.GatePassByTeamManager" ui-sref-active="active" >  <i class="fa fa-users"></i>Gate Pass</a></li>
+                                   <li ng-if="vm.user.role.roleId==1 ||vm.user.role.roleId==6 "><a ui-sref="main.gatePassByAssetManager" ui-sref-active="active" >  <i class="fa fa-users"></i>Gate Pass for stock</a></li>
+                            
+                                </ul>
+                                </li> -->
+                                 <!--  <li >
+                                <a href="javascript: void(0);"><i class="fa fa-drivers-license"></i> <span>BYOD</span> <span class="menu-arrow"></span></a>
+                                <ul   class="nav-second-level" aria-expanded="false">
+                                 <li ><a ui-sref="main.boydRequest" ui-sref-active="active" >  <i class="fa fa-users"></i>BOYD Request</a></li>
+                                  <li ><a ui-sref="main.boydRequestForManger" ui-sref-active="active" >  <i class="fa fa-users"></i>BOYD Request to Manger</a></li>
+                                  <li ><a ui-sref="main.boydAssetVerification" ui-sref-active="active" >  <i class="fa fa-users"></i>BOYD Asset Verification</a></li>
+                                  
+                                   <li ><a ui-sref="main.boydAsset" ui-sref-active="active" >  <i class="fa fa-users"></i>BOYD Asset</a></li>
+                           
+                                </ul>
+                                </li> -->
+                                <li >
+                                <a href="javascript: void(0);"><i class="fa fa-book"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
+                                <ul   class="nav-second-level" aria-expanded="false">
+ 									<li ng-if="vm.user.role.roleId==1 ||vm.user.role.roleId==6 " ><a ui-sref="main.assetSummaryReport" ui-sref-active="active" >  <i class="fa fa-users"></i>AssetSummaryReport</a></li>
+ 									<li ng-if="vm.user.role.roleId==1" ><a ui-sref="main.monthlyLease" ui-sref-active="active" >  <i class="fa fa-users"></i>Monthly Lease</a></li>
+ 									<li ng-if="vm.user.role.roleId==1 ||vm.user.role.roleId==6 " ><a ui-sref="main.allocateReport" ui-sref-active="active" >  <i class="fa fa-users"></i>Allocate Report</a></li>
+ 									<li ng-if="vm.user.role.roleId==1" ><a ui-sref="main.complaintSummaryReport" ui-sref-active="active" >  <i class="fa fa-users"></i>Complaint Report</a></li>
+ 									<li ng-if="vm.user.role.roleId==1" ><a ui-sref="main.complaintSummaryReportClose" ui-sref-active="active" >  <i class="fa fa-users"></i>Complaint Close Report</a></li>
+ 									<li ng-if="vm.user.role.roleId==1" ><a ui-sref="main.InCompletePoReport" ui-sref-active="active" >  <i class="fa fa-users"></i>InComplete PO Report</a></li>
+ 									<li ng-if="vm.user.role.roleId==1 ||vm.user.role.roleId==6 " ><a ui-sref="main.materialWiseAssetReport" ui-sref-active="active" >  <i class="fa fa-users"></i>Material Wise Report</a></li>
+ 									<li ng-if="vm.user.role.roleId==1 ||vm.user.role.roleId==6 " ><a ui-sref="main.QualityCheckReport" ui-sref-active="active" >  <i class="fa fa-users"></i>QC Report</a></li>
+                                 	<li ng-if="vm.user.role.roleId==1" ><a ui-sref="main.StatusWiseeReport" ui-sref-active="active" >  <i class="fa fa-users"></i>Status Wise Report</a></li>
+                                 	<li ng-if="vm.user.role.roleId==1" ><a ui-sref="main.gatePassSummaryReport" ui-sref-active="active" >  <i class="fa fa-users"></i>Status Wise Gate Pass Report</a></li>
+                                 	<li ng-if="vm.user.role.roleId==1 ||vm.user.role.roleId==6 " ><a ui-sref="main.depreciationReport" ui-sref-active="active" >  <i class="fa fa-users"></i>Depreciation Report</a></li>
+                                
+                                
+                                </ul>
+                            </li>
+ 							
+
+
+                           
+
+
+
+
+                        </ul>
+
+                    </div>
+                    <!-- Sidebar -->
+                  <!--   <div class="clearfix"></div> -->
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+<div ui-view="sub"></div>
+
+
+        </div>
+        
+       
+     

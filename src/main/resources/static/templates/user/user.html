@@ -1,0 +1,303 @@
+<style>
+
+.button-style{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rowText{
+text-align:center;
+color:#424949;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+th{
+background-color:#73C6B6;
+color:white;
+text-align:center;
+font-size:14px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-box{
+border: 2px solid #73C6B6;
+border-radius:10px;
+
+}
+/* input:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+} */
+tr:hover{
+background-color:#FFFFFF;
+box-shadow: 0 4px 8px 0 #76D7C4, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+i:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
+
+input:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+select:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input.mandtry:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+select.mandtry:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+textarea:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* select:hover{
+background-color:#F4F6F6;
+border:2px solid #2C3E50;
+} */
+
+input{
+border:2px solid #EAEDED;
+border-radius:20px;
+font-size:14px;
+ffont-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+label{
+font-size:14px;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+</style>
+    <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">User</h4>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                         
+                          <!-- start add  row -->
+                          <div class="row" ng-show="addRow">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    
+
+                                   				 <div class="row">
+						                            <div class="col-md-12">
+						                                <div class="card-box">
+						                                    <h4 class="card-header" style="text-align: center;padding-top:-10px;">Add new user</h4>
+						                                   
+						
+						                                    <form class="card-body'" style="padding-top:30px;padding-bottom:20px;">
+						                                     	<div class="form-row">
+						                                            <div class="form-group col-md-6">
+						                                                <label for="inputCity" class="col-form-label">First Name</label>
+						                                                <input type="text" class="form-control" id="firstName" ng-model="user.firstName"  ng-blur="capitalfname(user.fname);"placeholder="Enter First Name" disabled>
+						                                            </div>
+						                                            
+						                                            <div class="form-group col-md-6">
+						                                                <label for="inputZip" class="col-form-label">Last Name</label>
+						                                                <input type="text" class="form-control" id="lastName"  ng-model="user.lastName"  ng-blur="capitalLname(user.lname);"placeholder="Enter Last Name" disabled>
+						                                            </div>
+						                                        </div>
+						                                        <div class="form-row">
+						                                        
+						                                            <div class="form-group col-md-6" >
+						                                            
+						                                                <label for="uname" class="col-form-label">User Name</label>
+						                                                 <div class="input-group">
+						                                                <input type="text" class="form-control " id="uName" ng-model="user.userName" ng-blur="vm.checkUsername(user.user_name)" placeholder="Enter User Name "ng-disabled="savetype=='edit'">
+						                                                
+						                                            </div>
+						                                           </div> 
+						                                            <div class="form-group col-md-6" ng-if="!viewPass">
+						                                           
+						                                                <label for="inputPassword4" class="col-form-label">Password</label> 
+						                                                  <div class="input-group">
+						                                                  
+						                                                <input type="password" class="form-control" ng-model="user.password"  id="pass" title="Please click on cangePassword action to reset password" placeholder="Enter Password" placeholder="Password" disabled>
+						                                                  
+                                                              			  </div>
+						                                            </div>
+						                                            
+						                                        </div>
+						                                        
+						                                        <div class="form-row">
+						                                           
+						                                           <div class="form-group col-md-4"></div>
+						                                                <div class="form-group col-md-4">
+						                                                <label for="inputZip" class="col-form-label">Role</label>
+						                                                <select class="form-control mandtry"
+																		ng-model="user.role.role_id"
+																		ng-options="role.role_id as role.roleName for role in vm.roles" style="height: calc(2.25rem + 14px)" required>
+																		<option value="" disabled selected>Select Role</option></select>
+						                                            </div>
+						                                            
+						                                            <div class="form-group col-md2"></div>
+						                                            <div class="form-group col-md-2"></div>
+						                                            
+						                                        </div>
+						                                         <div class="row card-footer" >
+						                                      
+						                                         <div class="form-group col-md-0" style="margin-top:20px;margin-left:450px;">
+						                                         	 <button type="button" class="btn btn-success btn-rounded waves-effect w-md waves-light button-style" type="submit" ng-click="vm.save(user)"  ng-disabled="disabledClick"><i class='fas fa-save' style='font-size:16px;margin:0 2px;'></i>Save</button>
+						                                        	 						                                         
+						                                         </div>
+						                                         
+						                                          <div class="form-group col-md-4" style="margin-top:20px;margin-left:50px;">
+						                                         		   <button type="button" class="btn btn-danger btn-rounded waves-effect w-md waves-light button-style" ng-click="vm.cancle()">Cancel</button>
+						                                          </div>
+						                                          
+						                                       </div>
+						                                    </form>
+						                                </div>
+						                            </div>
+						                        </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- end add row -->
+
+                        <div class="row" style="margin-bottom:10px">
+								<div class="col-8">
+					              <label for="search">Search:</label>
+					              <input ng-model="search" id="search" ng-change="searchByPagination(search)" class="form-control" placeholder="Filter text">
+					            </div>
+					            <div class="col-4 pull-right">
+					              <label for="search">items per page:</label>
+					              <input type="number" min="1" max="100" class="form-control" ng-model="vm.perPage">
+					            </div>
+           				 </div>
+           				 
+           				 
+           				 
+           				 
+           				 
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                                  <h4 class="m-t-0 header-title"><b>                                  
+                                  <button type="button" class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style" id="tooltip-touch" title="Export Excel" ng-click="newExcel()" style="margin-top: 0.5%;margin-left: 1%;"><i class="fa fa-file-excel-o" style="font-size:18px;margin:0 2px;"></i>Export Excel</button>
+						       <button id="btnExport" ng-json-export-excel data="vm.allUsers" report-fields="vm.labels" style="display:none" filename="'Users'" ></button>
+						       
+						       </b></h4>
+                                    <p class="text-muted font-13 m-b-30">
+                                    </p>
+                                    
+                                    <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0"  style=" border: 1px solid #dee2e6;width:1500px;">
+                                        <thead style="width:800px;margin:0 0.5px;">
+                                        <tr>
+                                            <th class="text-center">Sr No</th>
+                                            <th class="text-center">Name</th>
+                                             <th class="text-center">Contact NO</th>    
+                                            <th class="text-center">Email</th>                                         
+                                            <th class="text-center">Added By</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center">Action</th>                                            
+                                            
+                                            
+                                        </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                        <tr ng-show="vm.users.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!;</td>
+										<tr dir-paginate="user in vm.users | filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+							
+                                           <td class="text-center rowText" width="8%">{{(vm.perPage*(vm.pageno-1))+($index+1)}}</td>
+                                            <td class="text-center rowText" width="25%"> {{user.firstName}} {{user.lastName}}</td>
+											<td class="text-center rowText" width="10%">{{user.contactNo}}</td>
+                                           
+                                            <td class="text-center rowText" width="10%">{{user.emailId}}</td>
+                                            
+                                            <td class="text-center rowText" width="10%">{{user.addedBy}}</td>                                            
+                                             
+                                            
+                                            
+                                            <td class="text-center "width="5%" >
+                                            <md-icon class="fas fa-user-alt " ng-if="user.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+                                            <md-icon class="fas fa-user-alt-slash" ng-if="user.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+                                            </td>
+                                            	
+                                            <td class="text-center"width="30%" >
+<!--                                         <md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-edit'  id="tooltip-touch" title="Edit" ng-click="vm.edit(user)" style="font-size:20px;color:#2E4053;"></i></md-button>
+ -->                    					<md-button class="md-icon-button btn-sm" aria-label="Favorite" ng-if="user.employee.designation.designationName!='Admin'" style="margin:0 0.5px;"> <i class=" mdi mdi-sync" id="tooltip-touch" title="Change Status" ng-click="vm.changeStatus(user)" style="font-size:20px;color:#2E86C1;"></i></md-button>
+                    					 <md-button class="md-icon-button btn-sm" aria-label="Favorite" ng-if="user.employee.designation.designationName!='Admin'" style="margin:0 0.5px;"><a ng-click="gooChangePassword(user.id)" ui-sref-active="active" ><i class="fa fa-lock" id="tooltip-touch" title="Change Password"  style="font-size:20px;color:#2E4053;"></i></a></md-button>
+                      					<md-button class="md-icon-button btn-sm" aria-label="Favorite" ng-if="user.employee.designation.designationName!='Admin'" style="margin:0 0.5px;"> <i class="fas fa-trash" id="tooltip-touch" title="Delete" ng-click="vm.deleteUser(user)" style="font-size:20px;color:#E74C3C ;"></i></md-button>
+                      					
+                      					</td>
+                      					
+                                        </tr>
+                                      
+                                      
+                                        </tbody>
+                                    </table>
+                                    
+                                     <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+                                   
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+              
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+</div>
+
+
+  <!-- Required datatable js -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="plugins/datatables/jszip.min.js"></script>
+        <script src="plugins/datatables/pdfmake.min.js"></script>
+        <script src="plugins/datatables/vfs_fonts.js"></script>
+        <script src="plugins/datatables/buttons.html5.min.js"></script>
+        <script src="plugins/datatables/buttons.print.min.js"></script>
+        <script src="plugins/datatables/buttons.colVis.min.js"></script>
+        
+        <!-- Responsive examples -->
+        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>

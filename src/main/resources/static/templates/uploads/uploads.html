@@ -1,0 +1,1304 @@
+<style>
+
+.form-group{
+margin:0 1px;
+padding-bottom:5px;
+
+}
+
+.buttonStyle:hover{
+background-color:#76D7C4;
+width:200px;
+color:black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius:15px;
+text-align:center;
+
+}
+
+h4:active{
+text-align:center;
+border-top:1px solid black;
+border-bottom:1px solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.row{
+padding-top:10px;
+}
+
+.card-box:hover{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.icon{
+font-size:30px;
+margin-top:-10px;
+}
+</style>
+    <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">Uploads  </h4>
+
+                                  
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                <!------------------------------------- end row --------------------------------------------->
+                         <div class="row"  >
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                   
+
+                                   				
+                           <!-- ----------------------------------column 1 starts--------------------------------------------------- -->	
+						                            <div class="col-md-3">						                            
+						                                <div class="card-box" ng-style="viewcardStyle">
+						                                 <h3 style="text-align:center" class="card-header">Upload
+						                                 <md-icon  ng-if="listView" class="md-icon-button  btn-sm " ng-click="listview()"><i class="fas fa-caret-down icon"></i></md-icon>
+						                                 <md-icon  ng-if="showList" class="md-icon-button  btn-sm " ng-click="showlist()"><i class="fas fa-caret-right icon"></i></md-icon>
+						                                 </h3>
+						                                 
+						                                 <div class="card-body " ng-if="viewMenu">
+						                                 <div class="row " style="padding-top:10px;">				                                  	 
+					                                    <div class="form-group">
+						                                  	<h4  class="buttonStyle  waves-effect w-md waves-light" ng-click="vm.customer()"><i class="fas fa-upload" style='font-size:16px;margin:0 2px;'></i>Customer</h4>
+						                                  	 	  
+						                                  	 </div>
+						                                  	 </div>
+						                                  	 
+						                                  	  <div class="row">
+						                                  	 	  <div class="form-group">
+						                                  	 	    <h4  class="buttonStyle  waves-effect w-md waves-light" ng-click="vm.project()"><i class="fas fa-upload" style='font-size:16px;margin:0 2px;'></i>Project</h4>
+						                                  	 	  
+						                                  	 	  </div>
+						                                  	 	  </div>
+						                                  	 	  
+						                                  	 	  <div class="row">
+						                                  	 	  <div class="form-group">
+						                                  	 	    <h4 class=" buttonStyle waves-effect w-md waves-light" ng-click="vm.room()"><i class="fas fa-upload" style='font-size:16px;margin:0 2px;'></i>Room</h4>
+						                                  	 	  
+						                                  	 	  </div>
+						                                  	 	  </div>
+						                                  	 	  
+						                                  	 	 
+						                                  	 	  
+						                                  	 
+						                                  	 	  
+						                                  	 	   <div class="row">
+						                                  	 	 <div class="form-group">
+						                                  	 	    <h4 class="buttonStyle  waves-effect w-md waves-light" ng-click="vm.employee()"><i class="fas fa-upload" style='font-size:16px;margin:0 2px;'></i>Employee</h4>
+						                                  	 	  
+						                                  	 	  </div>					                                  	  
+															</div>
+														  <!-- ----------------------------------column 1 end--------------------------------------------------- -->	
+														 
+						                                </div>
+						                                </div>
+						                            </div>
+						                      
+						                        
+						           <!-- ----------------------------------column 2 starts--------------------------------------------------- -->	
+									
+									<div class="col-md-9">						                            
+						                                <div class="card-box" style="border: 3px solid #64c5b1;">
+						                                 <h3 style="text-align: center" class="card-header">Registration and Uploads</h3>
+						                        <!-- ----------------------------------------Desk ------------------------------------->         
+						                         <div class="row" ng-show="deskTab">
+						                            <div class="col-md-12">
+						                                <div class="card-body">
+						                                    <h1 style="text-align: center">Customer</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	<!--  <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Desk No</label> 
+							                                              	  <input type="text" class="form-control mandtry" id="deskNo" ng-model="deskNo"   placeholder="Enter DeskNo">
+							                                              	 <span ng-show="deskNoErr" style="color:red;font-size:10px;">  * Desk No is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addDesk()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div> -->
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 							                                             	 	
+							                                              	 <input id="uploadDesk"  class="form-control mandtry"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * Desk No is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadDesk()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Desk.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                             <th class="text-center">Floor</th>
+											                                             <th class="text-center">BayNo</th>
+											                                            <th class="text-center">Desk No</th>
+											                                            <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.desks.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="desk in vm.desks| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{desk.floor}}</td>
+												                                           <td class="text-center">{{desk.bay}}</td>
+												                                            <td class="text-center">{{desk.deskCode}}</td>
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="desk.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+                                            												<md-icon class="fas fa-circle" ng-if="desk.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="desk.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="desk.active==1"> Active</span><span ng-if="desk.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeDeskStatus(desk)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+						                                </div>
+						                            </div>
+						                        </div>
+						                       <!-- ----------------------------------------Desk end ------------------------------------->           
+						                       <!-- ----------------------------------------Project ------------------------------------->
+						                       		 <div class="row" ng-show="projectTab">
+						                            <div class="col-md-12">
+						                                <div class="card-body">
+						                                    <h1 style="text-align: center">Project</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Project Name</label> 
+							                                              	  <input type="text" class="form-control mandtry" id="projectName" ng-model="projectName"   placeholder="Enter Project Name">
+							                                              	 <span ng-show="projectNameErr" style="color:red;font-size:10px;">  * Project Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addProject()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	 
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xslx)</label>
+							                                             	  <input id="uploadProject"  class="form-control mandtry"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadProject()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	 <a href="assets/uploadExcel/Project.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Project  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.projects.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="project in vm.projects| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{project.projectName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="project.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+                                            												<md-icon class="fas fa-circle" ng-if="project.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="project.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="project.active==1"> Active</span><span ng-if="project.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeStastusProject(project)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           
+												                                          <!--  <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeStastusProject(project)"><i class=" mdi mdi-sync"></i></button> -->
+												                                           	            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+						                               </div>
+						                            </div>
+						                        </div>
+						                       
+						                       
+						                       
+						                       <!-- ----------------------------------------Project end------------------------------------->  
+						                        <!-- ----------------------------------------Room start------------------------------------->  
+						                      <div class="row" ng-show="roomTab" >
+                           						 <div class="col-md-12">                              						 
+                                    			       <div class="card-body">                    
+						                                    <h1 style="text-align: center">Room</h1>						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Room Name</label> 
+						                                             								                                              	  <input type="text" class="form-control" id="roomName" ng-model="roomName"   placeholder="Enter Room Name">
+							                                              	 <span ng-show="roomNameErr" style="color:red;font-size:10px;">  * Room Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style  waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addRoom()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadRoom"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style  waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadRoom()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Room.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Room  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.rooms.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="room in vm.rooms| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{room.roomName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                             <md-icon class="fas fa-circle " ng-if="room.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+                                            												<md-icon class="fas fa-circle" ng-if="room.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="room.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="room.active==1"> Active</span><span ng-if="room.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeStastusRoom(room)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeStastusRoom(room)"><i class=" mdi mdi-sync"></i></button> -->
+												                                           	            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                         
+						                                       
+						                                    </form>
+						                               </div>
+                                </div>
+                            </div>
+                       
+						                        
+		 <!--- ----------------------------------------------Room end------------------------------------------------------------------->        
+		<!--- ----------------------------------------------Department start------------------------------------------------------------------->
+		
+		 <div class="row" ng-show="departmentTab" >
+                            <div class="col-md-12">
+                                <div class="card-body">
+						                              
+						              <h1 style="text-align: center">Department</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Department Name</label> 
+						                                             								                                              	  <input type="text" class="form-control" id="departmentName" ng-model="departmentName"   placeholder="Enter Department Name">
+							                                              	 <span ng-show="departmentNameErr" style="color:red;font-size:10px;">  * Department Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success waves-effect btn-rounded button-style waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addDepartment()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadDepartment"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadDepartment()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Department.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Department  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.departments.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="department in vm.departments| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{department.departmentName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            <md-icon class="fas fa-circle " ng-if="department.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="department.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="department.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="department.active==1"> Active</span><span ng-if="department.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeStastusDepartment(department)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	        <!--  <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeStastusDepartment(department)"><i class=" mdi mdi-sync"></i></button>
+												                                           	          -->   
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                         
+						                                       
+						                                    </form>
+						                               
+						                           </div>
+                                </div>
+                            </div>                      		
+		        
+		<!--- ----------------------------------------------Department end------------------------------------------------------------------->        
+		<!--- ----------------------------------------------Brand start------------------------------------------------------------------->
+			<div class="row" ng-show="brandTab" >
+                            <div class="col-12">
+                              <div class="card-body">				                               
+						          <h1 style="text-align: center">Brand </h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Brand Name</label> 
+							                                              	  <input type="text" class="form-control" id="brandName" ng-model="brandName"   placeholder="Enter Brand Name">
+							                                              	 <span ng-show="brandNameErr" style="color:red;font-size:10px;">  * Brand Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addBrand()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="brandUpload"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success waves-effect btn-rounded button-style waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadBrandh()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Brand.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Brand  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.brands.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="brand in vm.brands| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{brand.brandName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="brand.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="brand.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="brand.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="brand.active==1"> Active</span><span ng-if="brand.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           
+												                                           <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeBrandStatus(brand)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeBrandStatus(brand)"><i class=" mdi mdi-sync"></i></button>
+												                                            -->	            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+						                                
+						                       
+						                    
+
+                                   </div>
+                              
+                            </div>
+                        </div>
+		        
+		<!--- ----------------------------------------------Brand end------------------------------------------------------------------->
+		        
+		<!--- ----------------------------------------------Branch start------------------------------------------------------------------->
+					 <div class="row" ng-show="branchTab" >
+                            <div class="col-12">
+                                 <div class="card-body">						                               
+						       		<h1 style="text-align: center">Branch</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Branch Name</label> 
+							                                              	  <input type="text" class="form-control" id="branchName" ng-model="branchName"   placeholder="Enter Branch Name">
+							                                              	 <span ng-show="branchNameErr" style="color:red;font-size:10px;">  * Branch Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addBranch()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="branchUpload"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadBranch()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	 <a href="assets/uploadExcel/Branch.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Branch  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.branches.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="branch in vm.branches| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{branch.branchName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="branch.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="branch.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="branch.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="branch.active==1"> Active</span><span ng-if="branch.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeBranchStatus(branch)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeBranchStatus(branch)"><i class=" mdi mdi-sync"></i></button>
+												       -->                                     	            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+						                                
+						                           
+                                </div>
+                            </div>
+                        </div>
+		        
+		<!--- ----------------------------------------------Branch end------------------------------------------------------------------->        
+		<!--- ----------------------------------------------Designation start------------------------------------------------------------------->
+		
+		 <div class="row" ng-show="designationTab" >
+                            <div class="col-12">
+                                 <div class="card-body">
+						                               
+						                <h1 style="text-align: center">Designation</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Designation Name</label> 
+							                                              	  <input type="text" class="form-control" id="designationName" ng-model="designationName"   placeholder="Enter Designation Name">
+							                                              	 <span ng-show="designationNameErr" style="color:red;font-size:10px;">  * Designation Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addDesignation()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadDesignation"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success  btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadDesignation()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	 <a href="assets/uploadExcel/Designation.xlsx" type="button"class="btn btn-primary  btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Designation  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.designations.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="designation in vm.designations| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{designation.designationName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="designation.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="designation.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="designation.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="designation.active==1"> Active</span><span ng-if="designation.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           
+												                                           <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeDesignationStatus(designation)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	<!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeDesignationStatus(designation)"><i class=" mdi mdi-sync"></i></button>
+												                                           	 -->            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+                                </div>
+                            </div>
+                        </div>        
+		<!--- ----------------------------------------------Designation end------------------------------------------------------------------->        
+		<!--- ----------------------------------------------Work Location start------------------------------------------------------------------->
+					     <div class="row" ng-show="workLocationTab" >
+                            <div class="col-12">
+                                 <div class="card-body">
+						             <h1 style="text-align: center">Work Location</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Work Location Name</label> 
+							                                              	  <input type="text" class="form-control" id="workLocationName" ng-model="workLocationName"   placeholder="Enter Work Location Name">
+							                                              	 <span ng-show="workLocationNameErr" style="color:red;font-size:10px;">  * Work Location Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addWorkLocation()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadWorkLocation"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red;font-size:10px;">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadWorkLocation()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	 <a href="assets/uploadExcel/WorkLocation.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Work Location  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.workLocations.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="workLocation in vm.workLocations| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{workLocation.workLocationName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="workLocation.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="workLocation.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="workLocation.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="workLocation.active==1"> Active</span><span ng-if="workLocation.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeWorkLocationStatus(workLocation)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeWorkLocationStatus(workLocation)"><i class=" mdi mdi-sync"></i></button>
+												                                           	         -->    
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                    </form>
+						                            
+                                </div>
+                            </div>
+                        </div>
+		        
+		<!--- ----------------------------------------------Work Location end------------------------------------------------------------------->
+		
+		<!-- --------------------------------------------------------cost center----------------------------------------------------------------------- -->
+		
+		 <div class="row" ng-show="costCenterTab" >
+                            <div class="col-12">
+                              <div class="card-body">
+						                                
+						           <h1 style="text-align: center">Cost Center</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="    border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Cost Center Name</label> 
+							                                              	  <input type="text" class="form-control" id="costCenterName" ng-model="costCenterName"  ng-blur="checkcostCenterName()" placeholder="Enter Cost Center Name">
+							                                              	 <span ng-show="costCenterNameErr" style="color:red;font-size:10px;">  * Cost Center Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm" ng-disabled="addDisabled" id="tooltip-touch" title="Add" ng-click="vm.addCostCenter()" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadCostCenter"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskerr" style="color:red;font-size:10px;">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadCostCenter()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             		<a href="assets/uploadExcel/CostCenter.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Cost Center  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.costCenters.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="costCenter in vm.costCenters| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{costCenter.costCenterName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                             <md-icon class="fas fa-circle " ng-if="costCenter.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="costCenter.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="costCenter.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="costCenter.active==1"> Active</span><span ng-if="costCenter.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeCostCenterStatus(costCenter)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeCostCenterStatus(costCenter)"><i class=" mdi mdi-sync"></i></button>
+												                                           	          -->   
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+						                              
+						                         
+                                </div>
+                            </div>
+                        </div>
+		
+		<!-- --------------------------------------------------------------------cost center ends----------------------------------------------------------- -->
+		        
+		<!-- --------------------------------------------------------------------cost center ends----------------------------------------------------------- -->
+		         <div class="row" ng-show="subsidiaryTab" >
+                            <div class="col-12">
+                                <div class="card-body">
+						                             
+						           <h1 style="text-align: center">Subsidiary</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	 <div class="card-box" style="border: 1px solid #64c5b1;">
+						                                             	<label for="inputCity" class="col-form-label">Subsidiary Name</label> 
+							                                              	  <input type="text" class="form-control" id="subsidiaryName" ng-model="subsidiaryName"  ng-blur="checkSubsidaryName()" placeholder="Enter Subsidiary Name">
+							                                              	 <span ng-show="subsidiaryNameErr" style="color:red;font-size:10px;">  * Subsidiary Name is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Add" ng-click="vm.addSubsidiary()" ng-disabled="addDisabled" style="margin:10px; display: inline-block;">Add</button>
+						                                             	 </div>
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadSubsidiary"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="subsidiaryN" style="color:red ;font-size:10px;">  * file is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadSubsidiary()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Subsidiary.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Subsidiary  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.subsidiaries.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="subsidiary in vm.subsidiaries| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{subsidiary.subsidiaryName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                             <md-icon class="fas fa-circle " ng-if="subsidiary.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="subsidiary.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="subsidiary.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="subsidiary.active==1"> Active</span><span ng-if="subsidiary.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeSubsidiaryStatus(subsidiary)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeSubsidiaryStatus(subsidiary)"><i class=" mdi mdi-sync"></i></button>
+												                    -->                        	            
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>						                                
+						                            
+                                </div>
+                            </div>
+                        </div>
+		<!-- --------------------------------------------------------------------cost center ends----------------------------------------------------------- -->
+		        
+		<!-- --------------------------------------------------------------------cost center start----------------------------------------------------------- -->
+		         <div class="row" ng-show="supplierTab" >
+                            <div class="col-12">
+                                 <div class="card-body">
+						                                
+						             <h1 style="text-align: center">SUPPLIER</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadSupplier"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * Desk No is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style  waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadSupplier()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Supplier.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Supplier  Name</th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.suppliers.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="supplier in vm.suppliers| filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center">{{supplier.supplierName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                             <md-icon class="fas fa-circle " ng-if="supplier.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="supplier.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="supplier.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="supplier.active==1"> Active</span><span ng-if="supplier.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status"  ng-click="vm.changeSupplierStatus(supplier)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeSupplierStatus(supplier)"><i class=" mdi mdi-sync"></i></button>
+												                                           	          -->   
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>
+						                             
+						                           
+                                </div>
+                            </div>
+                        </div>
+		<!-- --------------------------------------------------------------------cost center ends----------------------------------------------------------- -->
+		        
+		<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+					     <div class="row" ng-show="materialTab" >
+                            <div class="col-12">
+                                 <div class="card-body">						                              
+						              <h1 style="text-align: center">Material</h1>
+						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadMaterial"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * Desk No is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadMaterial()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Material.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Material  </th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.materials.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="material in vm.materials | filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center"> {{material.materialCode}} {{material.materialName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            <md-icon class="fas fa-circle " ng-if="material.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="material.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="material.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="material.active==1"> Active</span><span ng-if="material.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           <md-button type="button" class="md-icon-button btn-sm"  ng-if="material.process_bit!=1" id="tooltip-touch" title="Change Status" ng-click="vm.changeMaterialStatus(material)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	 <md-button type="button" class="md-icon-button btn-sm"  ng-if="material.process_bit==1" id="tooltip-touch" title="Change Status" disabled><i class=" mdi mdi-sync" style="font-size:20px;color:#D6EAF8;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeMaterialStatus(material)"><i class=" mdi mdi-sync"></i></button>
+												                                           	          -->   
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                        
+						                                       
+						                                    </form>						                                
+						                           
+                                </div>
+                            </div>
+                        </div>
+		        
+		<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+		        
+		<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+						 <div class="row" ng-show="employeeTab">
+                            <div class="col-12">
+                                <div class="card-body">						                             
+						             <h1 style="text-align: center">Employee</h1>						                                   
+						
+						                                    <form>
+						                                      <div class="form-row">
+						                                             <div class="form-group col-md-4" style="margin-top: 2%;">
+						                                             	
+						                                             	
+						                                             	<div class="card-box" style="    border: 1px solid #64c5b1;">
+							                                             	 <label for="inputCity" class="col-form-label">Upload (.xmlx)</label> 
+							                                              	 <input id="uploadEmployee"  class="form-control"  type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />  
+
+							                                              	 <span ng-show="deskNoErr" style="color:red">  * Desk No is mandatory</span>
+						                                             	 <button type="button"class="btn btn-success btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload" ng-click="vm.uploadEmployee()" style="margin:10px; display: inline-block;">Upload</button>
+						                                             	<a href="assets/uploadExcel/Employee.xlsx" type="button"class="btn btn-primary btn-rounded button-style waves-effect waves-light btn-sm"  id="tooltip-touch" title="Upload"  style="margin:10px; display: inline-block;">Download format</a>
+						                                             	</div>
+						                                               
+						                                            </div>
+						                                        
+						                                             <div class="form-group col-md-6" style="margin-left: 5%;margin-top: 2%;">
+																             <table id="datatable-buttons" class="table table-responsive table-hover shadow p-4 mb-4 bg-white" cellspacing="0" width="100%" style=" border: 1px solid #dee2e6">
+										                                        <thead>
+											                                        <tr style="background-color:#64c5b1">
+											                                            <th class="text-center">Sr No</th>
+											                                            <th class="text-center">Employee  </th>
+											                                             <th class="text-center">Status</th>
+											                                            <th class="text-center">Action</th>
+											                                            
+											                                        
+											                                        </tr>
+										                                        </thead>
+										
+										
+										                                        <tbody >
+										                                        <tr ng-show="vm.employees.length <= 0"><td colspan="8" style="text-align:center;">Data Not Found!!
+																						<tr dir-paginate="employee in vm.employees | filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current">
+																			
+												                                           <td class="text-center">{{$index+1}}</td>
+												                                           <td class="text-center"> {{employee.fName}} {{employee.lName}}</td>
+												                                         
+												                                             
+												                                            <td class="text-center">
+												                                            
+												                                            <md-icon class="fas fa-circle " ng-if="employee.active==1" id="tooltip-touch" title="ACTIVE" style="font-size:20px;color:green;padding-top:5px;"></md-icon>
+ 																							<md-icon class="fas fa-circle" ng-if="employee.active==0" id="tooltip-touch" title="INACTIVE" style="font-size:20px;color:red;padding-top:5px;"></md-icon>
+												                                            
+												                                            
+												                                            	<!-- <button style="width:100px" ng-class="employee.active==1 ? 'btn btn-rounded btn-success':'btn btn-rounded btn-danger'">
+												                                            		   <span ng-if="employee.active==1"> Active</span><span ng-if="employee.active==0"> InActive</span>
+												                                            		</button> -->
+												                                            	 
+												                                         </td>
+												                                           
+												
+												                                           <td>
+												                                           
+												                                            <md-button type="button" class="md-icon-button btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeEmployeeStatus(employee)"><i class=" mdi mdi-sync" style="font-size:20px;color:#2E86C1;"></i></md-button>
+												                                           	         <!-- <button type="button"class="btn btn-info waves-effect waves-light btn-sm"  id="tooltip-touch" title="Change Status" ng-click="vm.changeEmployeeStatus(material)"><i class=" mdi mdi-sync"></i></button>
+												                                           	          -->   
+												                                           	
+																						  </td>
+												                                       </tr>
+												                                      
+										                                        </tbody>
+										                                    </table>
+						                                                       <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"  ></dir-pagination-controls>
+						                                             
+						                                            </div>
+						                                            
+						                                        </div>
+						                                       
+						                                         
+						                                       
+						                                    </form>
+						                                
+						                          
+                                </div>
+                            </div>
+                        </div>
+		        
+		<!-- ------------------------------------------------------------------------------------------------------------------------------- -->        
+			                        </div>
+											</div>
+									   			  
+ 		<!-- ----------------------------------column 2 end---------------------------------------------------------------------------- -->	
+						                                   
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>                   
+  
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+              
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+</div>
+
+
+  <!-- Required datatable js -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="plugins/datatables/jszip.min.js"></script>
+        <script src="plugins/datatables/pdfmake.min.js"></script>
+        <script src="plugins/datatables/vfs_fonts.js"></script>
+        <script src="plugins/datatables/buttons.html5.min.js"></script>
+        <script src="plugins/datatables/buttons.print.min.js"></script>
+        <script src="plugins/datatables/buttons.colVis.min.js"></script>
+        
+        <!-- Responsive examples -->
+        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>

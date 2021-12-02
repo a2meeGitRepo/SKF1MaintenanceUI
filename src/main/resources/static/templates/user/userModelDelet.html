@@ -1,0 +1,19 @@
+<div class="modal-header">
+	<h3 class="modal-title" id="modal-title">
+		<dl class="dl-horizontal">
+			<dt>Delete</dt>
+			<dd>{{vm.items.fname}}</dd>
+		</dl>
+	</h3>
+</div>
+<div class="modal-body" id="modal-body">
+	<dl class="dl-horizontal">
+		<dt>Are you sure to delete </dt>
+		<dt>it will deleted its related record</dt>
+	</dl>
+
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="vm.delet(vm.items)">Delet</button>
+	<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

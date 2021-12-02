@@ -1,0 +1,775 @@
+<style>
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 40%;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+	padding: 2px 16px;
+}
+
+.button-style {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.rowText {
+	text-align: center;
+	color: #424949;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+th {
+	background-color: #73C6B6;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-box {
+	border: 2px solid #73C6B6;
+	border-radius: 10px;
+}
+
+tr:hover {
+	background-color: #FFFFFF;
+	box-shadow: 0 4px 8px 0 #76D7C4, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+i:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+select:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input.mandtry:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+select.mandtry:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+textarea:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.avatar {
+	vertical-align: middle;
+	width: 100px;
+	height: 90px;
+	border-radius: 10%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input {
+	border: 2px solid #EAEDED;
+	border-radius: 20px;
+	font-size: 14px;
+	ffont-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+label {
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+hr {
+	font-size: 18px;
+	border-top: 1px solid #F5B041;
+}
+
+.vl {
+	border-left: 2px solid #F0B27A;
+	height: 20px;
+	margin-left: 100px;
+}
+</style>
+<script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
+<script
+	src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
+	  <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
+ <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
+<div class="content-page">
+	<!-- Start content -->
+	<div class="content">
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-12">
+					<div class="page-title-box button-style">
+						<h4 class="page-title float-left">Inspection Report</h4>
+
+						<ol class="breadcrumb float-right">
+							<li class="breadcrumb-item active">
+								<button type="button"
+									class="btn btn-success btn-rounded waves-effect w-md waves-light button-style"
+									type="submit" ng-click="vm.generatePDF()" ng-show="!editView"
+									ng-disabled="disabledClick">
+									<i class='fas fa-save' style='font-size: 16px; margin: 0 2px;'></i>SEND
+								</button>
+
+								<button type="button" ng-click="vm.generatePDF()" id="export_to_pdf" class="btn btn-primary">Get
+									data in PDF</button>
+							</li>
+
+
+						</ol>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+
+		</div>
+	</div>
+	<div id="inspectionReport">
+		<div class="page-title-box">
+			<div class="card-box" style="margin-right: 10px; margin-left: 10px;">
+				<div class="form-row">
+					<table style="width: 100%">
+						<tr>
+							<td>
+								<!-- <img src="image/spindle.png" style="width: 43%;"> --> <br />
+								SKF Spindle Service
+							</td>
+							<td><img src="image/sfk_new_logo.jpg" style="width: 73%;">
+
+							</td>
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr>
+
+							<td class="text-center">
+								<h3>FINDING INSPECTION REPORT</h3>
+							</td>
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr>
+
+							<td><b>Company :</b>{{vm.sop.customer.companyName}} <br />
+								SSC Order No :{{vm.sop.spindleServiceRequest.sscNo}} <br />
+								Spindle Model:{{vm.sop.spindle.spindleModel}}</td>
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Visual Inspection</h4> <br>
+								<span ng-repeat="visualInspec in vm.visualInspection">{{visualInspec.detials}} , <br/></span>
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.visualInspectionImages">
+									<img src="data:image/png;base64, {{image.base64Code}}"
+									alt="Red dot" width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Incoming Test Inspection</h4> <br>
+								Spindle run out (um) : Radial on nose
+								{{vm.incommingInspection.radialOnNose}} (<2um) </br>: @300mm
+								{{vm.incommingInspection.tmm}} (<20um) </br> : Face runout
+								{{vm.incommingInspection.faceRunout}} (<2um only for HSK & BBT)
+								</br>: Jump {{vm.incommingInspection.radialOnNose}} (depends on
+								customer requirement)
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.incommingInspectionImages">
+									<img src="data:image/png;base64, {{image.base64Code}}"
+									alt="Red dot" width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Power CablesVisual Check</h4> <br>
+								No of Cable :{{vm.powerCables.noOfCables}}<br /> Cable Length
+								:{{vm.powerCables.cableLength}}<br /> Cable Thickness
+								:{{vm.powerCables.cableThickness}}<br /> Others :
+								{{vm.powerCables.others}} <br /> <b>What to Check </b><br />
+								Cable :<span ng-if="vm.powerCables.checkContact">Yes</span><span
+								ng-if="! vm.powerCables.checkContact">No</span> <br />
+								Contacts: <span ng-if="vm.powerCables.checkContact">Yes</span><span
+								ng-if="! vm.powerCables.checkContact">No</span> <br /> <b>Defects/Corrected</b><br />
+								Cable :<span ng-if="vm.powerCables.defectCabble">Defects</span><span
+								ng-if="! vm.powerCables.correctedCabble">Corrected</span> <br />
+								Contacts: <span ng-if="vm.powerCables.defectContact">Defects</span><span
+								ng-if="! vm.powerCables.correctedContact">Corrected</span>
+
+
+							</td>
+							<td><span ng-repeat="image in vm.powerCablesImages">
+									<img src="data:image/png;base64, {{image.base64Code}}"
+									alt="Red dot" width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Spindle Disassembling</h4> <br> <span
+								ng-repeat="spindle in vm.spindleDisassemblin">{{$index+1}}
+									. {{spindle.detials}}</br>
+							</span>
+
+
+							</td>
+							<td><span ng-repeat="image in vm.spindleDisassemblinImages">
+									<img src="data:image/png;base64, {{image.base64Code}}"
+									alt="Red dot" width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Bearing Inspection</h4> <br>
+								<table>
+
+									<tr>
+										<td style="margin:15px"><b>Sr No</b></td>
+										<td style="margin:15px"><b>&nbsp Original Bearings Front</b></td>
+										<td style="margin:15px"><b> &nbsp Width</b></td>
+									</tr>
+
+
+									<tr ng-repeat="spindle in vm.bearingIspectionFront">
+										<td style="margin:5px">{{$index+1}}</td>
+										<td style="margin:5px">{{spindle.beraringName}}</td>
+										<td style="margin:5px">{{spindle.width}}</td>
+									</tr>
+
+
+
+
+
+								</table> <br /> <br />
+								<table>
+
+									<tr>
+										<td ><b>Sr No &nbsp</b></td>
+										<td ><b>&nbsp Original Bearings Rear &nbsp</b></td>
+										<td ><b>&nbsp Width</b></td>
+									</tr>
+
+
+									<tr ng-repeat="spindle in vm.bearingIspectionRear">
+										<td >{{$index+1}}</td>
+										<td >{{spindle.beraringName}}</td>
+										<td >{{spindle.width}}</td>
+									</tr>
+
+
+
+
+
+								</table>
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.bearingIspectionImages">
+									<img src="data:image/png;base64, {{image.base64Code}}"
+									alt="Red dot" width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Bearing Condition</h4> <br>
+
+								<table>
+
+									<tr>
+										<td ></td>
+										<td ><b> &nbsp Brg1</b></td>
+										<td ><b>&nbsp Brg2</b></td>
+										<td><b>&nbsp Brg3</b></td>
+										<td><b>&nbsp Brg4</b></td>
+									</tr>
+
+
+									<tr ng-repeat="bearing in vm.bearingCondotion">
+
+										<td><b>{{bearing.bearingItems}}&nbsp</b></td>
+										<td >{{bearing.bearing1}} &nbsp</td>
+										<td>{{bearing.bearing2}} &nbsp</td>
+										<td >{{bearing.bearing3}} &nbsp</td>
+										<td >{{bearing.bearing4}} &nbsp</td>
+									</tr>
+
+
+
+
+
+								</table>
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.bearingCondotionImages">
+									<img src="data:image/png;base64, {{image.base64Code}}"
+									alt="Red dot" width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						
+					
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">RCFA for Bearing Failure</h4> <br>
+										{{vm.rcfa.detials}}
+
+							</td>
+							<td><span ng-repeat="image in vm.rcfaImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">New Bearing</h4> <br>
+								<table>
+
+									<tr>
+										<td ><b>Sr No</b></td>
+										<td ><b>Original Bearings Front</b></td>
+										<td ><b>Width</b></td>
+									</tr>
+
+
+									<tr ng-repeat="spindle in vm.newBearingFront">
+										<td >{{$index+1}}</td>
+										<td >{{spindle.beraringName}}</td>
+										<td >{{spindle.width}}</td>
+									</tr>
+
+
+
+
+
+								</table> <br /> <br />
+								<table>
+
+									<tr>
+										<td ><b>Sr No</b></td>
+										<td ><b>Original Bearings Rear</b></td>
+										<td ><b>Width</b></td>
+									</tr>
+
+
+									<tr ng-repeat="spindle in vm.newBearingRear">
+										<td >{{$index+1}}</td>
+										<td >{{spindle.beraringName}}</td>
+										<td >{{spindle.width}}</td>
+									</tr>
+
+
+
+
+
+								</table>
+
+							</td>
+							<td><span ng-repeat="image in vm.newBearingImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Motor check After disassembly</h4> <br>
+								
+
+									
+										<b>Motar Info </b> <br/>
+										Brand :  {{vm.motorCheckDisassembly.brand}} <br/>
+										Model  :{{vm.motorCheckDisassembly.brand}}<br/>
+										Asynchronus :<span ng-if="vm.motorCheckDisassembly.asynchronus">Yes</span><span ng-if="! vm.motorCheckDisassembly.asynchronus">No</span><br/>
+										Synchronus:<span ng-if="vm.motorCheckDisassembly.synchronus">Yes</span><span ng-if="! vm.motorCheckDisassembly.synchronus">No</span><br/>
+									 <br/> <br/>
+									<b>What To Check </b> <br/>
+										Phase Balance : <span ng-if="vm.motorCheckDisassembly.phaseBalance">Yes</span><span ng-if="! vm.motorCheckDisassembly.phaseBalance">No</span> <br/>
+										Isolation  :<span ng-if="vm.motorCheckDisassembly.isolation">Yes</span><span ng-if="! vm.motorCheckDisassembly.isolation">No</span><br/>
+										Dirt Inside :<span ng-if="vm.motorCheckDisassembly.dirtInside">Yes</span><span ng-if="! vm.motorCheckDisassembly.dirtInside">No</span><br/>
+										Water Inside:<span ng-if="vm.motorCheckDisassembly.waterInside">Yes</span><span ng-if="! vm.motorCheckDisassembly.waterInside">No</span><br/>
+										<br/> <br/>
+										<b>Defects/Corrected</b> <br/>
+										Phase Balance : <span ng-if="vm.motorCheckDisassembly.phaseBalance_dc">Corrected</span><span ng-if="! vm.motorCheckDisassembly.phaseBalance_dc">Defect</span> <br/>
+										Isolation  :<span ng-if="vm.motorCheckDisassembly.isolation_dc">Corrected</span><span ng-if="! vm.motorCheckDisassembly.isolation_dc">Defect</span><br/>
+										Dirty :<span ng-if="vm.motorCheckDisassembly.dirty">Corrected</span><span ng-if="! vm.motorCheckDisassembly.dirty">Defect</span><br/>
+										Wet :<span ng-if="vm.motorCheckDisassembly.wet">Corrected</span><span ng-if="! vm.motorCheckDisassembly.wet">Defect</span><br/>
+									
+							<br/> <br/>
+										<b>Others : {{vm.motorCheckDisassembly.others}}</b>
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.newbearingImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Washing & Cleaning</h4> <br>
+										{{vm.washing.detials}}
+
+							</td>
+							<td><span ng-repeat="image in vm.washingImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Outlet Coolent/Air/Lub/Clamping
+									Identifying & Marking</h4> <br>
+											{{vm.inOutCoolent.detials}}
+
+							</td>
+							<td><span ng-repeat="image in vm.inOutCoolentImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Cooling System Inspection</h4> <br>
+								
+									
+										<b>Motar Info </b> <br/>
+										Cooling front bearing :  <span ng-if="vm.colloingSystemInspection.coolingFrontBearing">Yes</span><span ng-if="! vm.colloingSystemInspection.coolingFrontBearing">No</span> <br/>
+										Cooling rear bearing  :<span ng-if="vm.colloingSystemInspection.coolingRearBearing">Yes</span><span ng-if="! vm.colloingSystemInspection.coolingRearBearing">No</span><br/>
+										Cooling motor :<span ng-if="vm.colloingSystemInspection.collingMotor">Yes</span><span ng-if="! vm.colloingSystemInspection.collingMotor">No</span><br/>
+										
+									 <br/> <br/>
+									<b>What To Check </b> <br/>
+										Seals : <span ng-if="vm.colloingSystemInspection.seals">Yes</span><span ng-if="! vm.colloingSystemInspection.seals">No</span> <br/>
+										O rings  :<span ng-if="vm.colloingSystemInspection.oRing">Yes</span><span ng-if="! vm.colloingSystemInspection.oRing">No</span><br/>
+										Corrosion:<span ng-if="vm.colloingSystemInspection.corrosion">Yes</span><span ng-if="! vm.colloingSystemInspection.corrosion">No</span><br/>
+										<br/> <br/>
+										<b>Defects/Corrected</b> <br/>
+										Seals : <span ng-if="vm.colloingSystemInspection.seal_dc">Corrected</span><span ng-if="! vm.colloingSystemInspection.seal_dc">Defect</span> <br/>
+										O rings  :<span ng-if="vm.colloingSystemInspection.oRing_dc">Corrected</span><span ng-if="! vm.colloingSystemInspection.oRing_dc">Defect</span><br/>
+										Corrosion :<span ng-if="vm.colloingSystemInspection.corrosion_dc">Corrected</span><span ng-if="! vm.colloingSystemInspection.corrosion_dc">Defect</span><br/>
+									
+							<br/> <br/>
+										<b>Others : {{vm.colloingSystemInspection.others}}</b>
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.colloingSystemInspectionImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">Rotary Unit</h4> <br>
+								
+										<b>Motar Info </b> <br/>
+										Brand :  {{vm.rotaryUnit.brand}} <br/>
+										Model  :{{vm.rotaryUnit.brand}}<br/>
+										<br/> <br/>
+									<b>What To Check </b> <br/>
+										Connections: <span ng-if="vm.rotaryUnit.connection">Yes</span><span ng-if="! vm.rotaryUnit.connection">No</span> <br/>
+										Bearings  :<span ng-if="vm.rotaryUnit.bearing">Yes</span><span ng-if="! vm.rotaryUnit.bearing">No</span><br/>
+										Connector:<span ng-if="vm.rotaryUnit.connector">Yes</span><span ng-if="! vm.rotaryUnit.connector">No</span><br/>
+										Seals:<span ng-if="vm.rotaryUnit.seals">Yes</span><span ng-if="! vm.rotaryUnit.seals">No</span><br/>
+										
+										<br/> <br/>
+										<b>Defects/Corrected</b> <br/>
+										Connections : <span ng-if="vm.rotaryUnit.connection_dc">Corrected</span><span ng-if="! vm.rotaryUnit.connection_dc">Defect</span> <br/>
+										Bearings  :<span ng-if="vm.rotaryUnit.bearing_dc">Corrected</span><span ng-if="! vm.rotaryUnit.bearing_dc">Defect</span><br/>
+										Connector :<span ng-if="vm.rotaryUnit.connector_dc">Corrected</span><span ng-if="! vm.rotaryUnit.connector_dc">Defect</span><br/>
+										Seals :<span ng-if="vm.rotaryUnit.seals_dc">Corrected</span><span ng-if="! vm.rotaryUnit.seals_dc">Defect</span><br/>
+									
+							<br/> <br/>
+										<b>Others : {{vm.rotaryUnit.others}}</b>
+
+
+
+							</td>
+							<td><span ng-repeat="image in vm.newbearingImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+						<tr>
+							<td class="text-center"
+								style="text-align: left !important; font-size: 24px;">&nbsp
+								&nbsp</td>
+						</tr>
+						<tr style="border: 2px solid">
+							<td>
+								<h4 class="text-center">COMPONENT INSPECTION ( After
+									disassembly)</h4> <br>
+								<table>
+
+									<tr>
+										<td style="border: 2px solid">Sr No</td>
+										<td style="border: 2px solid">Original Bearings Front</td>
+										<td style="border: 2px solid">Width</td>
+									</tr>
+
+
+									<tr ng-repeat="spindle in vm.bearingIspectionFront">
+										<td style="border: 2px solid">{{$index+1}}</td>
+										<td style="border: 2px solid">{{spindle.beraringName}}</td>
+										<td style="border: 2px solid">{{spindle.width}}</td>
+									</tr>
+
+
+
+
+
+								</table> <br /> <br />
+								<table>
+
+									<tr>
+										<td style="border: 2px solid">Sr No</td>
+										<td style="border: 2px solid">Original Bearings Rear</td>
+										<td style="border: 2px solid">Width</td>
+									</tr>
+
+
+									<tr ng-repeat="spindle in vm.bearingIspectionRear">
+										<td style="border: 2px solid">{{$index+1}}</td>
+										<td style="border: 2px solid">{{spindle.beraringName}}</td>
+										<td style="border: 2px solid">{{spindle.width}}</td>
+									</tr>
+
+
+
+
+
+								</table>
+
+							</td>
+							<td><span ng-repeat="image in vm.newbearingImages"> <img
+									src="data:image/png;base64, {{image.base64Code}}" alt="Red dot"
+									width="100" height="100" />
+
+							</span></td>
+
+
+						</tr>
+					</table>
+
+
+
+				</div>
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- container -->
+
+</div>
+<!-- content -->
+
+
+</div>
+
+
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+</div>
+<script>
+	function generatePDF() {
+		var doc = new jsPDF(); //create jsPDF object
+		doc.fromHTML(document.getElementById("test"), // page element which you want to print as PDF
+		15, 15, {
+			'width' : 170
+		//set width
+		}, function(a) {
+			doc.save("HTML2PDF.pdf"); // save file name as HTML2PDF.pdf
+		});
+	}
+</script>
+<script>
+	$("#export_to_pdf").click(function() {
+		kendo.drawing.drawDOM("#inspectionReport", {
+			paperSize : "A4",
+			margin : {
+				top : "1cm",
+				bottom : "1cm"
+			},
+			scale : 0.8,
+			height : 1000
+		}).then(function(group) {
+			kendo.drawing.pdf.saveAs(group, "Inspection.pdf")
+		});
+	});
+</script>
+<!-- Required datatable js -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Buttons examples -->
+<script src="plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="plugins/datatables/jszip.min.js"></script>
+<script src="plugins/datatables/pdfmake.min.js"></script>
+<script src="plugins/datatables/vfs_fonts.js"></script>
+<script src="plugins/datatables/buttons.html5.min.js"></script>
+<script src="plugins/datatables/buttons.print.min.js"></script>
+<script src="plugins/datatables/buttons.colVis.min.js"></script>
+
+<!-- Responsive examples -->
+<script src="plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables/responsive.bootstrap4.min.js"></script>

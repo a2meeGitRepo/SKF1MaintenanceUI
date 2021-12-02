@@ -1,0 +1,136 @@
+<style>
+	input:focus {
+		border: 1px solid grey !important;
+	}
+</style>
+
+<div class="content-page">
+	<!-- Start content -->
+	<div class="content">
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-12">
+					<div class="page-title-box">
+						<h4 class="page-title float-left"> Role Hierarchy</h4>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+			<div class="row">
+				<div class="col-12">
+					<div class="page-title-box">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card-box">
+
+									
+
+									<div class="row">
+										<div class="col-md-12 text-center">
+											<label class="control-label">Select Role:<span
+													style="color: red;">*</span></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4" >
+										</div>
+										<div class="col-md-4" >
+											<!-- <select class="form-control" style="width:20%; height: 100%;"
+												id="selectRole" ng-model="selectRole"
+												ng-change="vm.changeRole(selectRole);">
+												<option value="selectRole">Select Role</option>
+												<option ng-repeat="role in vm.roles track by $index" ng-disabled="opts.roleName=='Super Admin'"
+													value="{{opts}}">{{opts.roleName}} </option>
+											</select> -->
+											
+											<select class="form-control mandtry"
+																			ng-model="selectRole" id="role"
+																			ng-options="role as role.roleName for role in vm.roles " 	ng-change="vm.changeRole(selectRole);"
+																			style="height: calc(2.25rem + 3px);margin-top: -5px;" required>
+																			<option value="" disabled selected>Select Role</option>
+																		</select>
+										</div>
+									</div>
+									<div class="row" ng-show="showReportee">
+									<div class="col-sm-7">
+											
+											</div>
+											<div class="col-sm-5">
+											<button type="button" class="btn btn-sm btn-primary btn-rounded " id="tooltip-touch" title="Add New " ng-click="vm.add()" style="margin-top:10px">Add New </button>
+											</div>
+									</div>
+									<div class="row" ng-show="addnew">
+									<div class="col-sm-4">
+									</div>
+									<div class="col-sm-4">
+										<label class="control-label">New  Role:<span
+													style="color: red;">*</span></label>	
+									</div>
+									
+									
+									</div>
+									<div class="row" ng-show="addnew">
+									<div class="col-sm-4">
+									</div>
+									<div class="col-sm-4">
+									<select class="form-control mandtry"
+																			ng-model="newRole" id="role"
+																			ng-options="role as role.roleName for role in vm.newRoles " 
+																			style="height: calc(2.25rem + 3px);margin-top: -5px;" required>
+																			<option value="" disabled selected>Select Role</option>
+																		</select>
+									</div>
+									<div class="col-sm-4">
+									<button type="button" class="btn btn-sm btn-success btn-rounded " id="tooltip-touch" title="Save " ng-click="vm.save()">Save</button>
+									
+									</div>
+									
+									</div>
+									<div class="row" style="width: 65%;margin: 15px auto;" ng-show="showReportee">
+											<div class="col-sm-4">
+											
+											</div>
+											
+											<div class="col-sm-4">
+												<table class="table table-bordered">
+													<thead>
+														<tr class="customTable">
+															<th>#</td>
+															<th>Role </td>
+															<th>Action</td>
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat = "arr in vm.reporteeRole track by $index">
+															<td>{{$index+1}}</td>
+															<td>{{arr.role.roleName}}</td>
+															<td>
+															<md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-trash'  id="tooltip-touch" title="Delet" ng-click="vm.delet(arr)" style="font-size:20px;color:#ff0101;"></i></md-button>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</div>

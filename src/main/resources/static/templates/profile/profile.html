@@ -1,0 +1,192 @@
+<style>
+
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.avatar:hover .image {
+  opacity: 0.3;
+}
+
+.avatar{
+vertical-align: middle;
+  width: 100px;
+  height: 90px;
+  border-radius: 10%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 11px 10px;
+}
+</style>
+    <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title float-left">Profile  </h4>
+							<ol class="breadcrumb float-right">
+                                  		<li class="breadcrumb-item active">
+                                  		   <button ng-if="editTab"  type="button" class="btn btn-primary btn-rounded w-md waves-effect waves-light" id="tooltip-touch" title="edit" ng-click="vm.edit()"><i class="fa fa-edit" style="font-size:24px" title="Edit"></i></button>
+                                  		   <button ng-if="cancelTab"  type="button" class="btn btn-danger btn-rounded w-md waves-effect waves-light" id="tooltip-touch" title="cancel" ng-click="vm.cancel()">Cancel</button>                                  		
+                                           <button ng-if="closeTab"  type="button" class="btn btn-info btn-rounded w-md waves-effect waves-light" id="tooltip-touch" title="close" ng-click="vm.cancel()">Close</button>                                  		
+                                           
+			   		
+                                  		</li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                         
+               <div class="row" >
+			<div class="col-md-12">
+					<div class="card-box">
+		<!-- -----------------------------------------------profile image--------------------------------------------------------- -->
+		
+		<div class="form-row" style="margin-top: 25px;">
+			<div class="form-group col-md-6">
+			<img alt="" class="avatar" src="assets/images/img_avatar.png">			
+  			<div class="overlay">
+  			 <div class="text">{{profile.fName}} {{profile.lName}} </div>
+  			</div>
+			</div>
+			</div>
+		
+		<!-- --------------------------------------------------Text info---------------------------------------------------------- -->
+							<div class="form-row" style="margin-top: 25px;">
+												<div class="form-group col-md-6">
+														<label for="inputCity" class="col-form-label">Employee Code
+															</label> <input type="text" class="form-control" id="empId"
+															ng-model="profile.employeCode" disabled>
+				
+													</div>
+									<div class="form-group col-md-6">
+									<label for="inputCity" class="col-form-label">Employee Id</label>
+									 <input type="text" class="form-control" id="empId"	ng-model="profile.employeId" disabled>
+									</div>
+							</div>
+						<!-- --------------------------------------------------------------------------------------------------------- -->	
+							<div class="form-row" style="margin-top: 25px;">
+												<div class="form-group col-md-6">
+														<label for="inputCity" class="col-form-label">Employee First Name
+															</label> <input type="text" class="form-control" id="empId"
+															ng-model="profile.fName" ng-disabled="editInfo">
+				
+													</div>
+									<div class="form-group col-md-6">
+									<label for="inputCity" class="col-form-label">Employee Last Name</label>
+									 <input type="text" class="form-control" id="empId"	ng-model="profile.lName" ng-disabled="editInfo">
+									</div>
+							</div>
+                       	<!-- --------------------------------------------------------------------------------------------------------- -->
+                       	
+                       	<div class="form-row" style="margin-top: 25px;">
+												<div class="form-group col-md-6">
+														<label for="inputCity" class="col-form-label">Contact number
+															</label> <input type="text" class="form-control" id="empId"
+															ng-model="profile.monileNo" ng-disabled="editInfo">
+				
+													</div>
+									<div class="form-group col-md-6">
+									<label for="inputCity" class="col-form-label">Employee EmailId</label>
+									 <input type="text" class="form-control" id="empId"	ng-model="profile.emailId" ng-disabled="editInfo">
+									</div>
+							</div>	
+                       		<!-- --------------------------------------------------------------------------------------------------------- -->
+                       		
+                       			<div class="form-row" style="margin-top: 25px;">
+												<div class="form-group col-md-6">
+														<label for="inputCity" class="col-form-label">Department
+															</label> <input type="text" class="form-control" id="empId"
+															ng-model="profile.dept" disabled>
+				
+													</div>
+									<div class="form-group col-md-6">
+									<label for="inputCity" class="col-form-label">Branch</label>
+									 <input type="text" class="form-control" id="empId"	ng-model="profile.branch" disabled>
+									</div>
+							</div>		
+                       			<!-- --------------------------------------------------------------------------------------------------------- -->
+                       			
+                       			<div class="form-row" style="margin-top: 25px;" ng-show="updateButton">
+												<div class="form-group col-md-6" >
+												
+										<button type="button" class="btn btn-success btn-rounded w-lg waves-effect waves-light " ng-click="vm.updateProfile(profile)">Update</button>
+											
+													</div>	
+												
+													</div>  
+                            <!-- end add row -->
+
+                       
+  
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+              
+            </div>
+
+</div>
+</div>
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+</div>
+
+
+  <!-- Required datatable js -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="plugins/datatables/jszip.min.js"></script>
+        <script src="plugins/datatables/pdfmake.min.js"></script>
+        <script src="plugins/datatables/vfs_fonts.js"></script>
+        <script src="plugins/datatables/buttons.html5.min.js"></script>
+        <script src="plugins/datatables/buttons.print.min.js"></script>
+        <script src="plugins/datatables/buttons.colVis.min.js"></script>
+        
+        <!-- Responsive examples -->
+        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>

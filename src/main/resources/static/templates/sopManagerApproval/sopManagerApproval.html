@@ -1,0 +1,2873 @@
+<style>
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 40%;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+	padding: 2px 16px;
+}
+
+.button-style {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.rowText {
+	text-align: center;
+	color: #424949;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+th {
+	background-color: #73C6B6;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-box {
+	border: 2px solid #73C6B6;
+	border-radius: 10px;
+}
+
+tr:hover {
+	background-color: #FFFFFF;
+	box-shadow: 0 4px 8px 0 #76D7C4, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+i:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+select:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input.mandtry:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+select.mandtry:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 #FFAFAA, 0 6px 20px 0 #FFAFAA;
+}
+
+textarea:hover {
+	background-color: #F4F6F6;
+	border: 2px solid #2C3E50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.avatar {
+	vertical-align: middle;
+	width: 100px;
+	height: 90px;
+	border-radius: 10%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+input {
+	border: 2px solid #EAEDED;
+	border-radius: 20px;
+	font-size: 14px;
+	ffont-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+label {
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+hr {
+	font-size: px;
+	border-top: 1px solid #F5B041;
+}
+
+.vl {
+	border-left: 2px solid #F0B27A;
+	height: 20px;
+	margin-left: 100px;
+}
+</style>
+<div class="content-page">
+	<!-- Start content -->
+	<div class="content">
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="col-12">
+					<div class="page-title-box button-style">
+						<h4 class="page-title float-left">SOP</h4>
+
+						<ol class="breadcrumb float-right">
+							<li class="breadcrumb-item active"><button type="button"
+									class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+									id="tooltip-touch" title="Add New Supplier" ng-click="vm.add()">Add
+									New</button></li>
+						</ol>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+
+		</div>
+	</div>
+	<!-- start add  row -->
+
+	<!-- START DESIGN PF SOP UPDATE  -->
+	<div class="row" style="margin-right: 10px; margin-left: 10px;"
+		ng-show="sopDetials">
+		<div class="col-12">
+			<div class="page-title-box">
+
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card-box">
+							<h1 class="card-header"
+								style="text-align: center; padding-top: -10px;">SOP Details</h1>
+
+
+
+							<form class="card-body'"
+								style="padding-top: 30px; padding-bottom: 20px;">
+								<!-- PAGE NO 1  START -->
+
+								<div class="form-row">
+									<div class="col-md-12" ng-show="page1">
+										<table style="width: 100%">
+
+											<tr>
+												<td style="border: 1px solid black; margin: 6px"><img
+													src="image/adplogo.jpg" style="width: 83%; margin: 15px"></td>
+												<td style="border: 1px solid black;" class="text-center"
+													rowspan="2"><span
+													style="margin: 14px; font-size: 24px;">Spindle
+														Service Center</span></td>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="3"><span
+													style="margin: 10px; font-size: 14px;">SKF Solution
+														Factory IMT Manesar Haryana -12205</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 24px;">SKF India
+														Ltd. Pune</span></td>
+												<td style="border: 1px solid black;" class="text-center">Sr
+													No</td>
+												<td style="border: 1px solid black;" class="text-center">Sr
+													No</td>
+
+												<td style="border: 1px solid black;" class="text-center">Sr
+													No</td>
+											</tr>
+
+											<tr style="margin-top: 5px">
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 24px;">Technician :</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b>{{technical.technician.fName}}</b></td>
+
+												<td style="border: 1px solid black;" class="text-center">SSC
+													Order No:</td>
+
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="2"><b>{{technical.sscNo}}</b></td>
+
+
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 24px;">Date :</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b>{{technical.date}}</b></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="2"></td>
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;""><b>
+														2. Spindle Data </b>
+											</tr>
+											<tr>
+
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 24px;">AID </span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">{{spindle.serialNo}}</td>
+
+												<td
+													style="border: 1px solid black; margin: 14px; font-size: 21px;"
+													class="text-center">Spindle Brand</td>
+
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="2"><b><input
+														type="text" ng-model="spindle.spindleBrand"
+														ng-disabled="spindl"></b></td>
+
+
+											</tr>
+											<tr>
+												<!-- 								                                          <tr ng-repeat="sop in vm.allsop | filter:q |itemsPerPage:vm.perPage" total-items="vm.total_count" current-page="pagination.current"> -->
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 24px;">Spindle Model</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="4"><b><input
+														type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl"></b></td>
+											</tr>
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>3.
+														Visual Inspection:</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveVisualInsp()" ng-show="! visual">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editVisualInsp()" ng-show="visual">Edit</button></td>
+												</td>
+
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="5"><span
+													style="margin: 14px; font-size: 24px;">Physical
+														Damage</span></td>
+											<tr ng-repeat="vi in visualInspection">
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="5"><span
+													style="margin: 14px; font-size: 19px;"><b><input  style="background-color: #97d9c1;"
+															type="text" ng-model="vi.detials" ng-disabled="visual"></b></span></td>
+											</tr>
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													<b>4 Incoming Test Inspection</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveTestInsp()" ng-show="! incTestIns">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editIncTestInsp()" ng-show="incTestIns">Edit</button>
+												</td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 19px;">Spindle Run
+														out(um):Radial On Nose.. <input type="text"
+														ng-model="incomingTest.radialOnNose"
+														ng-disabled="incTestIns">...(<2um)
+												</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 19px;">&nbsp
+														&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:@300mm:<b><input
+															type="text" ng-model="incomingTest.tmm"
+															ng-disabled="incTestIns">(2um) 
+												</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 19px;">&nbsp
+														&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:Face
+														runout:<b><input type="text"
+															ng-model="incomingTest.faceRunout"
+															ng-disabled="incTestIns"></b>(<2um only for HSK &
+														BBT)
+												</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 19px;">&nbsp
+														&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:Jump:<b><input
+															type="text" ng-model="incomingTest.jump"
+															ng-disabled="incTestIns"></b>(depends on customer
+														requirement)
+												</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 15px;"><b>Clamping
+															Force(kN):<input type="text"
+															ng-model="incomingTest.clampingForce"
+															ng-disabled="incTestIns">
+													</b>(Use OTT make POWER Chec kUnit)</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 15px;">BT30= <b><input
+															type="checkbox" ng-model="incomingTest.bt30"
+															class="c_check" ng-disabled="incTestIns"></b>(Depends)
+												</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">BT40= <input type="checkbox"
+													ng-model="incomingTest.bt40" class="c_check"
+													ng-disabled="incTestIns">
+												<td style="border: 1px solid black; color: black"
+													class="text-center">BT50= <b><input
+														type="checkbox" ng-model="incomingTest.bt50"
+														class="c_check" ng-disabled="incTestIns"></b>
+													(12-16kN)
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 15px; color: black">HSK40=<input
+														type="checkbox" ng-model="incomingTest.hsk40"
+														class="c_check" ng-disabled="incTestIns">(6.8-11kN)
+												</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">HSK50=<input type="checkbox"
+													ng-model="incomingTest.hsk50" class="c_check"
+													ng-disabled="incTestIns">(11-kN)
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">HSK63=<input type="checkbox"
+													ng-model="incomingTest.hsk63" class="c_check"
+													ng-disabled="incTestIns">(-28kN)
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">HSK80=<input type="checkbox"
+													ng-model="incomingTest.hsk80" class="c_check"
+													ng-disabled="incTestIns">(28-45kN)
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><input type="checkbox"
+													ng-model="incomingTest.hsk100" class="c_check"
+													ng-disabled="incTestIns">(45-70kN)</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="5"><span
+													style="margin: 14px; font-size: 15px;">EM Reference
+														(mm) :<input type="text"
+														ng-model="incomingTest.emReferance"
+														ng-disabled="incTestIns">(±0.1mm)
+												</span></td>
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 15px;"><b>Motor
+															Winding</b></span></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 15px;">Resistance
+														(+-5%) </span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">U=<b><input type="text"
+														ng-model="incomingTest.resistanceU"
+														ng-disabled="incTestIns"></b>
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">V=<b><input type="text"
+														ng-model="incomingTest.resistanceV"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">W=<b><input type="text"
+														ng-model="incomingTest.resistanceW"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 15px;">Inductance
+														(+-5%) </span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">U=<b><input type="text"
+														ng-model="incomingTest.inductanceU"
+														ng-disabled="incTestIns"></b>
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">V=<b><input type="text"
+														ng-model="incomingTest.inductanceV"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">W=<b><input type="text"
+														ng-model="incomingTest.inductanceW"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"></td>
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 15px;">Insulation
+														test (+-5%) </span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">U&E=<b><input type="text"
+														ng-model="incomingTest.insulationTestUE"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">V&E=<b><input type="text"
+														ng-model="incomingTest.insulationTestVE"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">W&E=<b><input type="text"
+														ng-model="incomingTest.insulationTestWE"
+														ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 15px;"><b>Thermal
+															Sensor:</b></span></td>
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="2"><span
+													style="margin: 14px; font-size: 15px;">Bearing
+														Housing=<b><input type="text"
+															ng-model="incomingTest.bearingHousing"
+															ng-disabled="incTestIns"></b>Ohm
+												</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="3"><span
+													style="margin: 14px; font-size: 15px;">Motor
+														winding=<b><input type="text"
+															ng-model="incomingTest.motorWinding"
+															ng-disabled="incTestIns"></b>Ohm
+												</span></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 15px;"><b>Proximity
+															Switches</b></span></td>
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 15px;">Sensor1 (S1)<b><input
+															type="text" ng-model="incomingTest.sensorS1"
+															ng-disabled="incTestIns"></b>
+												</span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">S2=<b><input type="text"
+														ng-model="incomingTest.sensorS2" ng-disabled="incTestIns"></b>
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">S3=<b><input type="text"
+														ng-model="incomingTest.sensorS3" ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">S4=<b><input type="text"
+														ng-model="incomingTest.sensorS4" ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">S5=<b><input type="text"
+														ng-model="incomingTest.sensorS5" ng-disabled="incTestIns"></b></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 15px;"><b>Encoder:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														Gap= <input type="text" ng-model="incomingTest.gap"
+														ng-disabled="incTestIns"> mm(Depends on the type
+														of sensor)</span></td>
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 15px;">A=<b><input
+															type="text" ng-model="incomingTest.encoderA"
+															ng-disabled="incTestIns"></b>
+												</span></td>
+
+												<td style="border: 1px solid black; color: black"
+													class="text-left">A=<b><input type="text"
+														ng-model="incomingTest.encoderA" ng-disabled="incTestIns"></b>
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">B=<b><input type="text"
+														ng-model="incomingTest.encoderB" ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">B=<b><input type="text"
+														ng-model="incomingTest.encoderB2" ng-disabled="incTestIns"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">Z=<b><input type="text"
+														ng-model="incomingTest.encoderZ" ng-disabled="incTestIns"></b></td>
+
+											</tr>
+
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													<b>5.Power CablesVisual Check:-</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.savePoerCable()" ng-show="! powerCab">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editPowerCable(sop)" ng-show="powerCab">Edit</button>
+												</td>
+												</td>
+
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 15px;">No. Of Cables<input
+														type="text" ng-model="powerCable.noOfCables"
+														ng-disabled="powerCab"> (pcs)
+												</span></td>
+
+												<td style="border: 1px solid black;" class="text-left"><b>What
+														To Check</b></td>
+												<td style="border: 1px solid black;" class="text-left"></td>
+												<td style="border: 1px solid black;" class="text-left"><b>Defects</b></td>
+												<td style="border: 1px solid black;" class="text-left"><b>Corrected</b></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 15px;">cable length<input
+														type="text" ng-model="powerCable.cableLength"
+														ng-disabled="powerCab"> (m)
+												</span></td>
+
+												<td style="border: 1px solid black;" class="text-left">Cables<input
+													type="checkbox" ng-model="powerCable.checkCabble"
+													class="c_check" ng-disabled="powerCab">
+												</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">Cables</td>
+												<td style="border: 1px solid black;" class="text-left"><input
+													type="checkbox" ng-model="powerCable.defectCabble"
+													class="c_check" ng-disabled="powerCab"></td>
+												<td style="border: 1px solid black;" class="text-left"><input
+													type="checkbox" ng-model="powerCable.correctedCabble"
+													class="c_check" ng-disabled="powerCab"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 15px;">cable
+														thickness<input type="text"
+														ng-model="powerCable.cableThickness"
+														ng-disabled="powerCab">(mm)
+												</span></td>
+
+												<td style="border: 1px solid black;" class="text-left">Contacts<input
+													type="checkbox" ng-model="powerCable.checkContact"
+													ng-true-value="'true'" ng-false-value="'false'"
+													class="c_check" ng-disabled="powerCab"></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left">Contacts</td>
+												<td style="border: 1px solid black;" class="text-left"><input
+													type="checkbox" ng-model="powerCable.defectContact"
+													class="c_check" ng-disabled="powerCab"></td>
+												<td style="border: 1px solid black;" class="text-left"><input
+													type="checkbox" ng-model="powerCable.correctedContact"
+													class="c_check" ng-disabled="powerCab"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"><span
+													style="margin: 14px; font-size: 15px;">Other:&nbsp&nbsp{{powerCable.others}}</span></td>
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														6.Spindle Disassembling:</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveSpindleDiss()" ng-show="! spindleDiss">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editspindleDiss()" ng-show="spindleDiss">Edit</button></td>
+												</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="5"><span
+													style="margin: 14px; font-size: 24px;">Observations
+														while disassembly( If any)</span></td>
+
+											</tr>
+
+											<tr ng-repeat="spd in spindleDisassembly">
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="5"><span
+													style="margin: 14px; font-size: 19px;"><b></b><input
+														type="text" ng-model="spd.detials"
+														ng-disabled="spindleDiss"></b></span></td>
+											</tr>
+
+										</table>
+
+									</div>
+
+									<!-- PAGE NO 1  END -->
+
+									<!-- PAGE NO 2  START-->
+									<div class="col-md-12" ng-show="page2">
+										<table style="width: 100%">
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													<b>7. Bearing Inspection:</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveBearingInsp()" ng-show="! bearingInsp">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editBearingInsp()" ng-show="bearingInsp">Edit</button>
+												</td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="4"><span
+													style="margin: 14px; font-size: 24px;">Original
+														Bearings Front</span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>width</b></td>
+											</tr>
+											<tr ng-repeat="bi in bearingInspectionFront">
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="4"><span
+													style="margin: 14px; font-size: 19px;"><b><input
+															type="text" ng-model="bi.beraringName"
+															ng-disabled="bearingInsp"></b></span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="bi.width" ng-disabled="bearingInsp"></b></td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">&nbsp
+													&nbsp</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="4"><span
+													style="margin: 14px; font-size: 24px;">Original
+														Bearings Rear</span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>width</b></td>
+											</tr>
+											<tr ng-repeat="bi in bearingInspectionRear">
+												<td style="border: 1px solid black; color: black"
+													class="text-center" colspan="4"><span
+													style="margin: 14px; font-size: 19px;"><b><input
+															type="text" ng-model="bi.beraringName"
+															ng-disabled="bearingInsp"></b></span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="bi.width" ng-disabled="bearingInsp"></b></td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													<b>8 Bearing Condition</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveBearingCond()" ng-show="! bearingCon">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editBearingCon()" ng-show="bearingCon">Edit</button>
+												</td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 24px;"></span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Brg1</b></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Brg2</b></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Brg3</b></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Brg4</b></td>
+
+											</tr>
+											<tr ng-repeat="bc in bearingCondition">
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><span
+													style="margin: 14px; font-size: 24px;"><b>{{bc.bearingItems}}</b></span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b><input type="text"
+														ng-model="bc.bearing1" ng-disabled="bearingCon"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b><input type="text"
+														ng-model="bc.bearing2" ng-disabled="bearingCon"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b><input type="text"
+														ng-model="bc.bearing3" ng-disabled="bearingCon"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b><input type="text"
+														ng-model="bc.bearing4" ng-disabled="bearingCon"></b></td>
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													<b>9 RCFA for Bearing Failure</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRCFA()" ng-show="! rcf">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRCFA()" ng-show="rcf">Edit</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="5"><span
+													style="margin: 14px; font-size: 19px;"><b><input
+															type="text" ng-model="rcfa.detials" ng-disabled="rcf"></b></span></td>
+											</tr>
+
+											<tr>
+
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>10 New Bearing</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveNewBearing()" ng-show="! newBearing">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editNewBearing()" ng-show="newBearing">Edit</button></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="4"><span
+													style="margin: 14px; font-size: 24px;">New Bearings
+														Front</span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Width</b></td>
+											</tr>
+											<tr ng-repeat="bear in bearingFront">
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="4"><span
+													style="margin: 14px; font-size: 19px;"><b><input
+															type="text" ng-model="bear.beraringName"
+															ng-disabled="newBearing"></b></span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b><input type="text"
+														ng-model="bear.width" ng-disabled="newBearing"></b></td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">&nbsp
+													&nbsp</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"
+													colspan="4"><span
+													style="margin: 14px; font-size: 24px;">New Bearings
+														Rear</span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Width</b></td>
+											</tr>
+											<tr ng-repeat="bear in bearingRear">
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="4"><span
+													style="margin: 14px; font-size: 19px;"><b><input
+															type="text" ng-model="bear.beraringName"
+															ng-disabled="newBearing"></b></span></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><b><input type="text"
+														ng-model="bear.width" ng-disabled="newBearing"></b></td>
+											</tr>
+
+											<tr>
+
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>11.
+														Motor check After disassembly</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveMotor()" ng-show="! motor">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editMotor()" ng-show="motor">Edit</button></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 17px;"><b>Motor
+															Info</b></span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>what
+														to check</b></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Defects</b></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Corrected</b></td>
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><span
+													style="margin: 14px; font-size: 17px; color: black">Brand:<b><input
+															type="text" ng-model="motorcheck.brand"
+															ng-disabled="motor"></b></span></td>
+												<td style="border: 1px solid black;" class="text-center">Phase
+													Balance:<b><input type="checkbox"
+														ng-model="motorcheck.phaseBalance" class="c_check"
+														ng-disabled="motor"></b>
+												</td>
+												<td style="border: 1px solid black;" class="text-center">Phase
+													Balance</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="motorcheck.phaseBalance_dc"
+														class="c_check" ng-disabled="motor"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="!motorcheck.phaseBalance_dc"
+														class="c_check" ng-disabled="motor"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><span
+													style="margin: 14px; font-size: 17px; color: black">Model:<b><input
+															type="text" ng-model="motorcheck.model"
+															ng-disabled="motor"></b></span></td>
+												<td style="border: 1px solid black;" class="text-center">Isolation<b><input
+														type="checkbox" ng-model="motorcheck.isolation"
+														class="c_check" ng-disabled="motor"></b></td>
+												<td style="border: 1px solid black;" class="text-center">Isolation</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="motorcheck.isolation_dc"
+														class="c_check" ng-disabled="motor"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><input
+													type="checkbox" ng-model="!motorcheck.isolation_dc"
+													class="c_check" ng-disabled="motor"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><span
+													style="margin: 14px; font-size: 17px; color: black">Asychronous:<b><input
+															type="checkbox" ng-model="motorcheck.asynchronus"
+															ng-true-value="'true'" ng-false-value="'false'"
+															class="c_check" ng-disabled="motor"></b></span></td>
+												<td style="border: 1px solid black;" class="text-center">Dirt
+													Inside:<b><input
+													type="checkbox" ng-model="motorcheck.dirtInside"
+													ng-true-value="'true'" ng-false-value="'false'"
+													class="c_check" ng-disabled="motor"></b>
+												</td>
+												<td style="border: 1px solid black;" class="text-center">Dirty</td>
+												<td style="border: 1px solid black;" class="text-center"><input
+													type="checkbox" ng-model="motorcheck.dirty"
+													ng-true-value="'true'" ng-false-value="'false'"
+													class="c_check" ng-disabled="motor"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="!motorcheck.dirty"
+														class="c_check" ng-disabled="motor"></b></td>
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><span
+													style="margin: 14px; font-size: 17px; color: black">Synchronous:<b><input
+															type="checkbox" ng-model="motorcheck.synchronus"
+															ng-true-value="'true'" ng-false-value="'false'"
+															class="c_check" ng-disabled="motor"></b></span></td>
+												<td style="border: 1px solid black;" class="text-center">Water
+													Inside:<b><input type="checkbox"
+														ng-model="motorcheck.waterInside" class="c_check"
+														ng-disabled="motor"></b>
+												</td>
+												<td style="border: 1px solid black;" class="text-center">Wet</td>
+												<td style="border: 1px solid black;" class="text-center"><input
+													type="checkbox" ng-model="motorcheck.wet"
+													class="c_check" ng-disabled="motor"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="!motorcheck.wet"
+														class="c_check" ng-disabled="motor"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="5"><span
+													style="margin: 14px; font-size: 17px; color: black">Other:<b><input
+															type="text" ng-model="motorcheck.others"
+															ng-disabled="motor"></b>
+												</span></td>
+											</tr>
+
+
+											<tr>
+
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 21px;"><b>12&nbsp&nbsp&nbsp
+														Washing & Cleaning:</b>&nbsp<b><input type="text"
+														ng-model="washingCleaning.detials" ng-disabled="clean"></b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveWash()" ng-show="! clean">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editWash()" ng-show="clean">Edit</button></td>
+
+											</tr>
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 21px;"><b>13.
+														In & Outer Coolent/Air/Lub/Clamping Identifying &
+														Marketing:</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveInOutCoolent()" ng-show="! coolent">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editInOutCoolent()" ng-show="coolent">Edit</button></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"
+													colspan="5"
+													style="text-align: left!important; font-size: 24px;"><span
+													style="margin: 14px; font-size: 17px; color: black">Corrective
+														Action(if Any):&nbsp&nbsp&nbsp&nbsp<b><input
+															type="text" ng-model="inOutCooloent.detials"
+															ng-disabled="coolent"></b>
+												</span></td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>14
+														Cooling System Inspection:</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveCoolingSystem()" ng-show="! coolSystem">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editCoolingSystem()" ng-show="coolSystem">Edit</button></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 17px;"><b>General
+															Info</b></span></td>
+												<td style="border: 1px solid black;" class="text-left"><b>what
+														to check</b></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-left"><b>Defects</b></td>
+												<td style="border: 1px solid black;" class="text-left"><b>Corrected</b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 17px;">Cooling Front
+														bearing:<b><input type="checkbox"
+															ng-model="coolingSystem.coolingFrontBearing"
+															ng-true-value="'true'" ng-false-value="'false'"
+															class="c_check" ng-disabled="coolSystem"></b>
+												</span></td>
+												<td style="border: 1px solid black;" class="text-left">Seals:<b><input
+														type="checkbox" ng-model="coolingSystem.seal"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+												<td style="border: 1px solid black;" class="text-left">Seals:<b></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="coolingSystem.seal_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="!coolingSystem.seal_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 17px;">Cooling rear
+														bearing:<b><input type="checkbox"
+															ng-model="coolingSystem.coolingRearBearing"
+															ng-true-value="'true'" ng-false-value="'false'"
+															class="c_check" ng-disabled="coolSystem"></b>
+												</span></td>
+												<td style="border: 1px solid black;" class="text-left">O
+													rings:<b><input type="checkbox"
+														ng-model="coolingSystem.oRing" ng-true-value="'true'"
+														ng-false-value="'false'" class="c_check"
+														ng-disabled="coolSystem"></b>
+												</td>
+												<td style="border: 1px solid black;" class="text-left">O
+													rings:<b></b>
+												</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="coolingSystem.oRing_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="!coolingSystem.oRing_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-left"><span
+													style="margin: 14px; font-size: 17px;">Cooling
+														motor:<b><input type="checkbox"
+															ng-model="coolingSystem.collingMotor"
+															ng-true-value="'true'" ng-false-value="'false'"
+															class="c_check" ng-disabled="coolSystem"></b>
+												</span></td>
+												<td style="border: 1px solid black;" class="text-left">Corrosion:<b><input
+														type="checkbox" ng-model="coolingSystem.corrosion"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+												<td style="border: 1px solid black;" class="text-left">Corrosion:<b></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="coolingSystem.corrosion_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="coolingSystem.corrosion_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="coolSystem"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="5"><span
+													style="margin: 14px; font-size: 17px; color: black">Other:<b><input
+															type="text" ng-model="coolingSystem.others"
+															ng-disabled="coolSystem"></b></span></td>
+											</tr>
+										</table>
+									</div>
+									<!-- PAGE NO 2  END -->
+
+									<!-- PAGE NO 3  START -->
+									<div class="col-md-12" ng-show="page3">
+										<table style="width: 100%">
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>15
+														Rotary Unit:Please preserve ceramic faces of unit</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRotary()" ng-show="! roter">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRotary()" ng-show="roter">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 17px;"><b>General
+															Info</b></span></td>
+												<td style="border: 1px solid black;" class="text-center"><b>what
+														to check</b></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Defects</b></td>
+												<td style="border: 1px solid black;" class="text-center"><b>Corrected</b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 17px; color: black">Brand:<b><input
+															type="text" ng-model="rotaryUnit.brand"
+															ng-disabled="roter"></b></span></td>
+												<td style="border: 1px solid black;" class="text-center">Connections:<b><input
+														type="checkbox" ng-model="rotaryUnit.connection"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center">Connections:</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit.connection_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="! rotaryUnit.connection_dc"
+														
+														class="c_check" ng-disabled="roter"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><span
+													style="margin: 14px; font-size: 17px;">Model:<b><input
+															type="text" ng-model="rotaryUnit.model"
+															ng-disabled="roter"></b></span></td>
+												<td style="border: 1px solid black;" class="text-center">Bearings:<input
+														type="text" ng-model="rotaryUnit.bearing"
+														ng-disabled="roter"></td>
+												<td style="border: 1px solid black;" class="text-center">Bearings:</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 17px;"></span></td>
+												<td style="border: 1px solid black;" class="text-center">Connector:<b><input
+														type="checkbox" ng-model="rotaryUnit.connector_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center">Connector:</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"><span
+													style="margin: 14px; font-size: 17px;"></span></td>
+												<td style="border: 1px solid black;" class="text-center">Seals:<b><input
+														type="checkbox" ng-model="rotaryUnit.seals_dc"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center">Seals:</td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+												<td style="border: 1px solid black;" class="text-center"><b><input
+														type="checkbox" ng-model="rotaryUnit"
+														ng-true-value="'true'" ng-false-value="'false'"
+														class="c_check" ng-disabled="roter"></b></td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; color: black"
+													class="text-left" colspan="5"><span
+													style="margin: 14px; font-size: 17px; color: black">Other:<b><input
+															type="text" ng-model="rotaryUnit.other"
+															ng-disabled="roter"></b></span></td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>16
+														COMPONENT INSPECTION ( After disassembly)</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveComInsA()" ng-show="! comInsA">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editComInsA()" ng-show="comInsA">Edit</button>
+												</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center">Size
+													(for Bearing Fits)</td>
+												<td style="border: 1px solid black;" class="text-center">Taper
+													(0-2um)</td>
+												<td style="border: 1px solid black;" class="text-center">Ovality
+													(0-3um)</td>
+												<td style="border: 1px solid black;" class="text-center">Total
+													Runout (0-3um)</td>
+
+											</tr>
+											<tr ng-repeat="ci in componentInspection1">
+												<td style="border: 1px solid black;" class="text-center">{{ci.type}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.size" ng-disabled="comInsA"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.taper" ng-disabled="comInsA"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.ovality" ng-disabled="comInsA"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.total_runout" ng-disabled="comInsA"></b>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">&nbsp
+													&nbsp</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center">Length</td>
+												<td style="border: 1px solid black;" class="text-center">Taper
+													(0-2um)</td>
+												<td style="border: 1px solid black;" class="text-center">Difference</td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+
+											</tr>
+											<tr ng-repeat="ci in componentInspection2">
+												<td style="border: 1px solid black;" class="text-center">{{ci.type}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.length" ng-disabled="comInsA"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.taper" ng-disabled="comInsA"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.difference" ng-disabled="comInsA"></b></td>
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													&nbsp &nbsp</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center">Shaft
+													Taper</td>
+												<td style="border: 1px solid black;" class="text-center">BT</td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+
+											</tr>
+											<tr ng-repeat="ci in componentInspection3">
+												<td style="border: 1px solid black;" class="text-center">{{ci.shaftTaper}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left""><b><input type="text"
+														ng-model="ci.bt" ng-disabled="comInsA"></b></td>
+
+											</tr>
+
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">&nbsp
+													&nbsp</td>
+											</tr>
+
+
+
+
+
+
+										</table>
+									</div>
+									<!-- PAGE NO 3 END -->
+									<!-- PAGE NO 4 START-->
+									<div class="col-md-12" ng-show="page4">
+
+
+										<table style="width: 100%">
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>18
+														Spares Required:</b>
+
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveSpareRequred()" ng-show="! spareReq">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editspareRequred()" ng-show="spareReq">Edit</button>
+
+												</td>
+
+
+											</tr>
+											<tr>
+
+												<td style="border: 1px solid black;" class="text-center">Item</td>
+												<td style="border: 1px solid black;" class="text-center">Specifications</td>
+												<td style="border: 1px solid black;" class="text-center">Quantity</td>
+												<td style="border: 1px solid black;" class="text-center">Received</td>
+												<td style="border: 1px solid black;" class="text-center">Price</td>
+
+											</tr>
+											<tr ng-repeat="spare in sparesRequired">
+												<td style="border: 1px solid black; color: black"
+													class="text-center">{{spare.spare.spareName}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">{{spare.spare.description}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">{{spare.quantity}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center">{{spare.recieved}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-center"><input type="text"
+													ng-model="spare.price" ng-disabled="spareReq"></td>
+
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														19 COMPONENT INSPECTION ( Before assembly & after
+														Machining)</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveComInsBf()" ng-show="! comInsBf">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editComInsB()" ng-show="comInsBf">Edit</button>
+												</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center">Size
+													(for Bearing Fits)</td>
+												<td style="border: 1px solid black;" class="text-center">Taper
+													(0-2um)</td>
+												<td style="border: 1px solid black;" class="text-center">Ovality
+													(0-3um)</td>
+												<td style="border: 1px solid black;" class="text-center">Total
+													Runout (0-3um)</td>
+
+											</tr>
+											<tr ng-repeat="ci in componentInspection1_19">
+												<td style="border: 1px solid black;" class="text-center">{{ci.type}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.size" ng-disabled="comInsBf"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.taper" ng-disabled="comInsBf"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.ovality" ng-disabled="comInsBf"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.total_runout" ng-disabled="comInsBf"></b>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													&nbsp &nbsp</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center">Length</td>
+												<td style="border: 1px solid black;" class="text-center">Taper
+													(0-2um)</td>
+												<td style="border: 1px solid black;" class="text-center">Difference</td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+
+											</tr>
+											<tr ng-repeat="ci in componentInspection2_19">
+												<td style="border: 1px solid black;" class="text-center">{{ci.type}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.length" ng-disabled="comInsBf"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.taper" ng-disabled="comInsBf"></b></td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left"><b><input type="text"
+														ng-model="ci.difference" ng-disabled="comInsBf"></b></td>
+
+											</tr>
+
+
+
+										</table>
+									</div>
+									<!-- PAGE NO 4 END -->
+									<!-- PAGE NO 6 START-->
+									<div class="col-md-12" ng-show="page5">
+
+
+										<table style="width: 100%">
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													&nbsp &nbsp</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black;" class="text-center">Shaft
+													Taper</td>
+												<td style="border: 1px solid black;" class="text-center">BT</td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+												<td style="border: 1px solid black;" class="text-center"></td>
+
+											</tr>
+											<tr ng-repeat="ci in componentInspection3_19">
+												<td style="border: 1px solid black;" class="text-center">{{ci.shaftTaper}}</td>
+												<td style="border: 1px solid black; color: black"
+													class="text-left""><b><input type="text"
+														ng-model="ci.bt" ng-disabled="comInsBf"></b></td>
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														20 Positive lock Front side Bearing set( Before assembly &
+														after Machining)=</b> <input type="text"
+													ng-model="positiveLock.detials" ng-disabled="plock">
+													</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.savePlock()" ng-show="! plock">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editPlock()" ng-show="plock">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">&nbsp
+													&nbsp</td>
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														21 Rear Side NN bearing clearance (as per design)= </b><input
+													type="text" ng-model="rearSide.detials" ng-disabled="rside">
+													</b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRside()" ng-show="! rside">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRside()" ng-show="rside">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													&nbsp &nbsp</td>
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>22
+														Clamping system sensors</b>
+
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveClampingSys()" ng-show="! clampingSys">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editClampingSys()" ng-show="clampingSys">Edit</button>
+
+												</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">General
+													Info</td>
+												<td style="border: 1px solid black;">Test</td>
+												<td style="border: 1px solid black;" colspan=3></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Brand <input
+													type="text" ng-model="clampingSensor.brand"
+													 ng-disabled="clampingSys"> </td>
+
+												<td style="border: 1px solid black;">S1 <input
+													type="text" ng-model="clampingSensor.s1"
+													 ng-disabled="clampingSys"> (mV)</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Defect</td>
+												<td style="border: 1px solid black;">Corrected</td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Model <input
+													type="text" ng-model="clampingSensor.model"
+													 ng-disabled="clampingSys"></td>
+
+												<td style="border: 1px solid black;">S2 <input
+													type="text" ng-model="clampingSensor.s2"
+													ng-disabled="clampingSys"> (mV)</td>
+												<td style="border: 1px solid black;">Sensor</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="clampingSensor.checkSensor"
+													class="c_check" ng-disabled="clampingSys"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="! clampingSensor.checkSensor"
+													class="c_check" ng-disabled="clampingSys"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+
+												<td style="border: 1px solid black;">S3 <input
+													type="text" ng-model="clampingSensor.s3"
+													ng-disabled="clampingSys">(mV)</td>
+												<td style="border: 1px solid black;">Cable</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="clampingSensor.checkCable"
+													class="c_check" ng-disabled="clampingSys"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="clampingSensor.checkCable"
+													class="c_check" ng-disabled="clampingSys"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"><b>Sensor
+													Test</b></td>
+
+												<td style="border: 1px solid black;" colspan=4></td>
+
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">With
+													tool clamp :  <input
+													type="text" ng-model="clampingSensor.withToolCamp"
+													ng-disabled="clampingSys"></td>
+
+												<td style="border: 1px solid black;" colspan=4></td>
+
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Without
+													tool clamp :  <input
+													type="text" ng-model="clampingSensor.withoutToolCamp"
+													ng-disabled="clampingSys"></td>
+
+												<td style="border: 1px solid black;" colspan=4></td>
+
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Unclamp : <input
+													type="text" ng-model="clampingSensor.unCamp"
+													ng-disabled="clampingSys"></td>
+
+												<td style="border: 1px solid black;" colspan=4></td>
+
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Other : <input
+													type="text" ng-model="clampingSensor.other"
+													ng-disabled="clampingSys"></td>
+
+												<td style="border: 1px solid black;" colspan=4></td>
+
+
+
+											</tr>
+
+
+
+
+
+
+
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>23
+														Encoder : :</b>
+
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveEncoder()" ng-show="! encoderTab">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editEncoder()" ng-show="encoderTab">Edit</button>
+
+												</td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">General
+													Info</td>
+												<td style="border: 1px solid black;">Test</td>
+												<td style="border: 1px solid black;" colspan=3></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+												<td style="border: 1px solid black;">A <input
+													type="text" ng-model="encoder.a1"
+													ng-disabled="encoderTab">(mV)</td>
+
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Defect</td>
+												<td style="border: 1px solid black;">Corrected</td>
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Brand  <input
+													type="text" ng-model="encoder.brand"
+													ng-disabled="encoderTab"></td>
+
+												<td style="border: 1px solid black;"><span
+													style="text-decoration: overline">A</span>  <input
+													type="text" ng-model="encoder.a2"
+													ng-disabled="encoderTab">(mV)</td>
+												<td style="border: 1px solid black;">Sensor Head</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.sensorHead"
+													class="c_check" ng-disabled="encoderTab"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="! encoder.sensorHead"
+													class="c_check" ng-disabled="encoderTab"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Model  <input
+													type="text" ng-model="encoder.model"
+													ng-disabled="encoderTab"></td>
+
+												<td style="border: 1px solid black;">B<input
+													type="text" ng-model="encoder.b"
+													ng-disabled="encoderTab"> (mV)</td>
+												<td style="border: 1px solid black;">Cable</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.cable"
+													class="c_check" ng-disabled="encoderTab"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.cable"
+													class="c_check" ng-disabled="encoderTab"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Wheel:
+													256 <input type="checkbox" ng-model="encoder.wheel_256"
+													class="c_check" ng-disabled="encoderTab">
+												</td>
+
+												<td style="border: 1px solid black;"><span
+													style="text-decoration: overline">B</span> <input type="text" ng-model="encoder.wheel_256"
+													 ng-disabled="encoderTab"> (mV)</td>
+												<td style="border: 1px solid black;">Connector</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.connector"
+													class="c_check" ng-disabled="encoderTab"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.connector"
+													class="c_check" ng-disabled="encoderTab"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+
+												<td style="border: 1px solid black;">U1/U2  <input type="text" ng-model="encoder.u1u2"
+													 ng-disabled="encoderTab"></td>
+												<td style="border: 1px solid black;">Sensor wheel</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.sensorWheel"
+													class="c_check" ng-disabled="encoderTab"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="encoder.bt30"
+													class="c_check" ng-disabled="encoderTab.sensorWheel"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+
+												<td style="border: 1px solid black;">PhaseA-B  <input type="text" ng-model="encoder.phaseABDeg"
+													 ng-disabled="encoderTab"> deg</td>
+												<td style="border: 1px solid black;">A&B-R <input type="text" ng-model="encoder.ab_r"
+													 ng-disabled="encoderTab"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+
+												<td style="border: 1px solid black;">R <input type="text" ng-model="encoder.rq"
+													 ng-disabled="encoderTab"> (mV)</td>
+												<td style="border: 1px solid black;">R  <input type="text" ng-model="encoder.r2"
+													 ng-disabled="encoderTab">(mV)</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+
+												<td style="border: 1px solid black;">Gear Wheel Run Out <input type="text" ng-model="encoder.gearWheelRunOut"
+													 ng-disabled="encoderTab">
+												</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>Others <input type="text" ng-model="encoder.other"
+													 ng-disabled="encoderTab"></td>
+
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+
+
+											</tr>
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														24 Belt Inspection : </b><input type="text"
+													ng-model="beltInsp.detials" ng-disabled="belt"> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveBeltInspection()" ng-show="! belt">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editBeltInspection()" ng-show="belt">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+													&nbsp &nbsp</td>
+											</tr>
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														25 Drawbar Spring Inspection : </b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveDrawerSpring()" ng-show="! drawer">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editDrawerSpring()" ng-show="drawer">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">General
+													Info</td>
+												<td style="border: 1px solid black;">Test</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Defect</td>
+												<td style="border: 1px solid black;">Corrected</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">No. of
+													springs  <input type="text" ng-model="drawbarSpring.noOfSpring"
+													 ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;">ID= <input type="text" ng-model="drawbarSpring.idEqualTo"
+													 ng-disabled="drawer"></td>
+
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Front
+													side:  <input type="text" ng-model="drawbarSpring.frontSide"
+													 ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;">OD= <input type="text" ng-model="drawbarSpring.odEqualTo"
+													 ng-disabled="drawer"></td>
+
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Rear
+													side:<input type="text" ng-model="drawbarSpring.rearSide"
+													 ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;">Height <input type="text" ng-model="drawbarSpring.height"
+													 ng-disabled="drawer"></td>
+
+												<td style="border: 1px solid black;">Force </td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="drawbarSpring.force"
+													class="c_check" ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="drawbarSpring.force"
+													class="c_check" ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;"></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+												<td style="border: 1px solid black;">Width <input type="text" ng-model="drawbarSpring.width"
+													 ng-disabled="drawer"></td>
+
+												<td style="border: 1px solid black;">Burned</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="drawbarSpring.burned"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="drawbarSpring.burned"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"></td>
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Clamping
+													Force=  <input type="text" ng-model="drawbarSpring.clampingForce"
+													 ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;">No. of rev.=  <input type="text" ng-model="drawbarSpring.noOfRev"
+													 ng-disabled="drawer"></td>
+
+												<td style="border: 1px solid black;">Corrosion</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="drawbarSpring.corrosion"
+													class="c_check" ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="idrawbarSpring.corrosion"
+													class="c_check" ng-disabled="drawer"></td>
+												<td style="border: 1px solid black;"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+												<td style="border: 1px solid black;">Wire Size = <input type="text" ng-model="drawbarSpring.wireSize"
+													 ng-disabled="drawer"></td>
+
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"></td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>
+													Please write drawbar disc arrangement + Stack Length:<input type="text" ng-model="drawbarSpring.details"
+													 ng-disabled="drawer"></td>
+
+											</tr>
+
+
+										</table>
+									</div>
+									<!-- PAGE NO 5 END -->
+									<!-- PAGE NO 6 START-->
+									<div class="col-md-12" ng-show="page6">
+
+
+										<table style="width: 100%">
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														26 Lubrication System Inspection : </b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveLubricationSystem()" ng-show="! lubric">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editLubricationSystem()" ng-show="lubric">Edit</button></td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">General
+													Info</td>
+												<td style="border: 1px solid black;">What To Check</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Defect</td>
+												<td style="border: 1px solid black;">Corrected</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Oil-Air
+
+													<input type="checkbox" ng-model="lubrication.checkOilAir"
+													class="c_check" ng-disabled="lubric">
+
+												</td>
+												<td style="border: 1px solid black;">Cleanliness  <input type="text" ng-model="lubrication.checkCleanLiness"
+													 ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;">Seals</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="lubrication.correctSeals"
+													class="c_check" ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="lubrication.correctSeals"
+													class="c_check" ng-disabled="lubric"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Oil
+													Mist <input type="checkbox" ng-model="lubrication.checkOilAir"
+													class="c_check" ng-disabled="lubric">
+												</td>
+												<td style="border: 1px solid black;">Seals <input type="text" ng-model="lubrication.checkSeals"
+													 ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;">O rings</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="lubrication.checkSeals"
+													class="c_check" ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="lubrication.checkSeals"
+													class="c_check" ng-disabled="lubric"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Air
+													Pressure  <input type="text" ng-model="lubrication.airPressure"
+													 ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;">Condition <input type="text" ng-model="lubrication.checkCondition"
+													 ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;">Nozzles </td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="lubrication.nozzles"
+													class="c_check" ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="lubrication.nozzles"
+													class="c_check" ng-disabled="lubric"></td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Oil
+													type <input type="text" ng-model="lubrication.oilType"
+													 ng-disabled="lubric"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>
+													Others <input type="text" ng-model="lubrication.other"
+													 ng-disabled="lubric"></td>
+
+
+
+											</tr>
+
+
+
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														27 Sealing Inspection: </b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveSealingInspection()" ng-show="! seal">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editSealingInspection()" ng-show="seal">Edit</button></td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%">General
+													Info</td>
+												<td style="border: 1px solid black;">What To Check</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Defect</td>
+												<td style="border: 1px solid black;">Corrected</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Labyrinth
+
+													<input type="checkbox" ng-model="sealing.checkLabyrinth" ng-true-value="'true'" ng-false-value="'false'"
+													class="c_check" ng-disabled="seal">
+
+												</td>
+												<td style="border: 1px solid black;">Cleanliness <input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.checkCleanLiness"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;">Rubber Seal </td>
+												<td style="border: 1px solid black;"><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.correctRubberSeal"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;"><input type="checkbox"  ng-true-value="'true'" ng-false-value="'false'"ng-model="sealing.correctRubberSeal"
+													class="c_check" ng-disabled="seal"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Rubber
+													Seal <input type="checkbox" ng-model="sealing.checkRubberSeal" ng-true-value="'true'" ng-false-value="'false'"
+													class="c_check" ng-disabled="seal">
+												</td>
+												<td style="border: 1px solid black;">Seals <input type="checkbox"  ng-true-value="'true'" ng-false-value="'false'"ng-model="sealing.checkSeals"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;">Air Seal </td>
+												<td style="border: 1px solid black;"><input type="checkbox"  ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.correctAirSeal"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;"><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'"  ng-model="sealing.correctAirSeal"
+													class="c_check" ng-disabled="seal"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">GMN
+													Seal <input type="checkbox" ng-model="sealing.checkGMNSeal"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;">Condition <input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.checkCondition"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;">GMN Seal</td>
+												<td style="border: 1px solid black;"><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.correctGMNSeal"
+													class="c_check" ng-disabled="seal"></td>
+												<td style="border: 1px solid black;"><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.correctGMNSeal"
+													class="c_check" ng-disabled="seal"></td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+
+
+											</tr>
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>
+													Others <input type="text" ng-model="sealing.other"
+													ng-disabled="seal"></td>
+
+
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														28 Shaft Balancing: </b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveShaftBalancing()" ng-show="! shaft">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editShaftBalancing()" ng-show="shaft">Edit</button></td>
+
+
+											</tr>
+											
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Balanced
+													RPM: <input type="text"  ng-model="shaftBalancing.balanceRPM"
+													ng-disabled="shaft"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;" colspan=3>Action</td>
+
+
+											</tr>
+											<tr>
+														<td style="border: 1px solid black;"> Shaft Weight: (Kg)
+														</td>
+														<td style="border: 1px solid black;">Defects
+														</td>
+														<td style="border: 1px solid black;">Unbalance Value(g/kg)
+														</td>
+														<td style="border: 1px solid black;">Unbalance Value(g/kg) after operation (g/kg)
+														</td>
+														<td style="border: 1px solid black;"> Done/Corrected
+														</td>
+											</tr>
+											<tr ng-repeat="sel in shaftBalancing.list">
+													<td style="border: 1px solid black; width: 25%">{{sel.shaftWeight}}</td>
+												<td style="border: 1px solid black;"><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sel.defects"
+													class="c_check" ng-disabled="shaft"></td>
+												<td style="border: 1px solid black;" ><input type="text"  ng-model="sel.unbalanceValue"
+													ng-disabled="shaft"></td>
+												<td style="border: 1px solid black;" ><input type="text"  ng-model="sel.unbalanceValueOperation"
+													ng-disabled="shaft"></td>
+														<td style="border: 1px solid black;"><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="sealing.doneCorrected"
+													class="c_check" ng-disabled="shaft"></td>
+											</tr>
+
+
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>G-
+													Level - Please refer the chart for corresponding RPM</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>Method
+													of Balancing: Weight Addition <input type="checkbox"
+													ng-model="incomingTest.bt30" class="c_check"
+													ng-disabled="incTestIns">
+												</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>
+													Weight Removal <input type="checkbox"
+													ng-model="incomingTest.bt30" class="c_check"
+													ng-disabled="incTestIns">
+												</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%" colspan=5>
+													Remark</td>
+
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														29 Drawbar assembling & Pull force tes </b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveDrawbarAssemb()" ng-show="! drawbarAssemb">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editDrawbarAssemb()" ng-show="drawbarAssemb">Edit</button></td>
+
+
+											</tr>
+											<tr>
+											<td class="text-center" colspan="5">
+											<input
+														type="text" ng-model="spindle.spindleModel"
+														ng-disabled=drawbarAssembling.">
+											
+											
+											
+											</td>
+											</tr>
+											
+											
+											
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														30 Spindle Run Out Inspection:</b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRside()" ng-show="! rside">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRside()" ng-show="rside">Edit</button></td>
+
+
+											</tr>
+											<tr>
+											<td style="border: 1px solid black;" class="text-center" >
+													1   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													5   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													8   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													13   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											
+											</tr>
+											
+											<tr>
+											<td  style="border: 1px solid black;" class="text-center" >
+													2   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td  style="border: 1px solid black;" class="text-center" >
+													6   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td  style="border: 1px solid black;" class="text-center" >
+													10   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													14   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											
+											</tr>
+											<tr>
+											<td style="border: 1px solid black;" class="text-center" >
+													3   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													7   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													11   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td class="text-center" >
+													15   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											
+											</tr>
+											<tr>
+											<td style="border: 1px solid black;" class="text-center" >
+													4   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td class="text-center" >
+													8   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">(<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													12   <input type="text" ng-model="spindle.spindleModel"
+														ng-disabled="spindl">  (<span>&#181;</span>m)
+											</td>
+											<td style="border: 1px solid black;" class="text-center" >
+													
+											</td>
+											
+											</tr>
+											
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														31 Spindle Clearance Inspection:</b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRside()" ng-show="! rside">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRside()" ng-show="rside">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">General
+													Info</td>
+												<td style="border: 1px solid black;">What To Check</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Defect</td>
+												<td style="border: 1px solid black;">Corrected</td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Axial Force
+
+													<input type="text" ng-model="incomingTest.bt30"
+													 ng-disabled="incTestIns">
+
+												</td>
+												<td style="border: 1px solid black;">
+													Axial Clerance
+												
+												
+												<input type="text" ng-model="incomingTest.bt30"
+													 ng-disabled="incTestIns">
+												</td>
+												<td style="border: 1px solid black;">
+													Clearance
+												
+												</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">Radial Force
+													<input type="text" ng-model="incomingTest.bt30"
+													 ng-disabled="incTestIns">
+												</td>
+												<td style="border: 1px solid black;">Radial Clearance   </td>
+												<td style="border: 1px solid black;">Stiffness</td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+												<td style="border: 1px solid black;"><input
+													type="checkbox" ng-model="incomingTest.bt30"
+													class="c_check" ng-disabled="incTestIns"></td>
+
+
+											</tr>
+											<tr>
+												
+												<td style="border: 1px solid black;" colspan=2>OK clearance</td>
+												<td style="border: 1px solid black;" colspan=3>Standard Stiffness</td>
+												
+
+
+											</tr>
+											<tr>
+												
+												<td style="border: 1px solid black;" colspan=5>Spindle Jump while tool unclamp force:</td>
+												
+
+
+											</tr>
+											
+										</table>
+									</div>
+
+									<!-- PAGE NO 6 END -->
+									<!-- PAGE NO 7 START-->
+									
+									<div class="col-md-12" ng-show="page7">
+
+
+											<table style="width: 100%">
+													
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														32 RUNNING TEST RESULTS :</b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRside()" ng-show="! rside">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRside()" ng-show="rside">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">RPM
+													</td>
+												<td style="border: 1px solid black;">Time</td>
+												<td style="border: 1px solid black;" colspan=2>Vibrations Front</td>
+												<td style="border: 1px solid black;"colspan=2 >Vibrations Rear</td>
+												<td style="border: 1px solid black;" colspan=2>Temp </td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+													</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;">Vertical (mm/s)</td>
+												<td style="border: 1px solid black;">Horizontal (mm/s)</td>
+												<td style="border: 1px solid black;">Vertical (mm/s)</td>
+												<td style="border: 1px solid black;">Horizontal (mm/s)</td>
+												<td style="border: 1px solid black;">Rear </td>
+												<td style="border: 1px solid black;">Front </td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+													</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+
+
+											</tr>
+											
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+														&nbsp&nbsp</td>
+													
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+													Colling motor
+													</td>
+												<td style="border: 1px solid black;">ON</td>
+												<td style="border: 1px solid black;">OFF</td>
+												
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+													Cooling Bearing
+													</td>
+												<td style="border: 1px solid black;">ON</td>
+												<td style="border: 1px solid black;">OFF</td>
+												
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+													Other
+													</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												
+
+											</tr>
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;">
+														&nbsp &nbsp</td>
+													
+											</tr>
+											<tr>
+												<td ><b>Final Run out test after test running :</b>
+													</td>
+												
+
+											</tr>
+											<tr>
+												<td >Nose Run out (<2um):
+													</td>
+												
+
+											</tr>
+											<tr>
+												<td >On Mandrel Near Nose (<2um):
+													</td>
+												
+
+											</tr>
+											<tr>
+												<td >On mandrel at 300mm from nose (<2um):
+													</td>
+												
+
+											</tr>
+											
+											<tr>
+												<td >Axial Clearance:
+													</td>
+												
+
+											</tr>
+											<tr>
+												<td >Radial Clearance
+													</td>
+												
+
+											</tr>
+											
+											<tr>
+												<td class="text-center" colspan="5"
+													style="text-align: left !important; font-size: 24px;"><b>
+														33 Time spent on spindle service::</b> </b>
+													<button type="button" class=" btn-success btn-sm"
+														value="Edit" style="float: right; width: 70px"
+														ng-click="vm.saveRside()" ng-show="! rside">Save</button>
+													<button type="button" class=" btn-primary btn-sm"
+														value="Edit"
+														style="float: right; background-color: #FF0000; width: 70px"
+														ng-click="vm.editRside()" ng-show="rside">Edit</button></td>
+
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+												Activity
+													</td>
+												<td style="border: 1px solid black;">Time (hrs)</td>
+												<td style="border: 1px solid black;">Remarks</td>
+												
+
+											</tr>
+											<tr>
+												<td style="border: 1px solid black; width: 25%">
+												
+													</td>
+												<td style="border: 1px solid black;"></td>
+												<td style="border: 1px solid black;"></td>
+												
+
+											</tr>
+											
+											</table>
+									</div>		
+									
+									
+									<!-- PAGE NO 7 END -->
+
+
+
+
+
+
+
+
+
+
+
+
+									<div style="margin-top: 10px;">
+										<ol class="breadcrumb float-right">
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 1" ng-click="vm.pagef1()">Page
+													1</button></li>
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 2" ng-click="vm.pagef2()">Page
+													2</button></li>
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 3" ng-click="vm.pagef3()">Page
+													3</button></li>
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 4 " ng-click="vm.pagef4()">Page
+													4</button></li>
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 5" ng-click="vm.pagef5()">Page
+													5</button></li>
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 6" ng-click="vm.pagef6()">Page
+													6</button></li>
+											<li class="breadcrumb-item active"><button type="button"
+													class="btn btn-primary btn-rounded w-md waves-effect waves-light button-style"
+													id="tooltip-touch" title="Page 7" ng-click="vm.pagef7()">Page
+													7</button></li>
+
+										</ol>
+									</div>
+								</div>
+
+
+
+
+
+
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- END DESIGN PF SOP UPDATE  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="row"
+		style="margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+		<div class="col-8">
+			<label for="search">Search:</label> <input ng-model="search"
+				id="search" ng-change="searchByPagination(search)"
+				class="form-control" placeholder="Filter text()">
+		</div>
+		<div class="col-4 pull-right">
+			<label for="search">items per page:</label> <input type="number"
+				min="1" max="100" class="form-control" ng-model="vm.perPage">
+		</div>
+	</div>
+	<div class="row" style="margin-right: 10px; margin-left: 10px;">
+		<div class="col-12">
+			<div class="card-box table-responsive">
+				<h4 class="m-t-0 header-title">
+					<b> </b>
+				</h4>
+				<p class="text-muted font-13 m-b-30"></p>
+				<table id="datatable-buttons"
+					class="table table-responsive table-hover shadow p-4 mb-4 bg-white"
+					cellspacing="0" width="100%"
+					style="border: 1px solid #dee2e6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+					<thead>
+						<tr>
+							<th class="text-center">Sr No</th>
+							<th class="text-center">SCC No</th>
+							<th class="text-center">Spindle</th>
+							<th class="text-center">Serial No</th>
+							<th class="text-center">Customer</th>
+							<th class="text-center">Technician</th>
+							<th class="text-center">Issue</th>
+							<th class="text-center">Inspection Status</th>
+							<th class="text-center">Final Inspection Status</th>
+							<th class="text-center">Over All Status</th>
+
+							<th class="text-center" style="width: 303px;">Action</th>
+
+						</tr>
+					</thead>
+
+
+					<tbody>
+						<tr ng-show="vm.orders.length <= 0">
+							<td colspan="8"
+								style="text-align: center; color: #5D6D7E; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Data
+								Not Found!!
+						<tr
+							dir-paginate="sop in vm.sops | filter:q |itemsPerPage:vm.perPage"
+							total-items="vm.total_count" current-page="pagination.current">
+
+							<td class="text-center rowText">{{(vm.perPage*(vm.pageno-1))+($index+1)}}</td>
+							<td class="text-center rowText">{{sop.spindleServiceRequest.sscNo}}
+							</td>
+							<td class="text-center rowText">
+								{{sop.spindleServiceRequest.spindle.spindleBrand}}
+								{{sop.spindleServiceRequest.spindle.spindleModel}}</td>
+							<td class="text-center rowText">{{sop.spindleServiceRequest.spindle.serialNo}}
+							</td>
+							<td class="text-center rowText">
+								{{sop.spindleServiceRequest.customer.customerCode}}
+								{{sop.serviceRequest.customer.companyName}}</td>
+							<td class="text-center rowText">
+								{{sop.technician.emoloyeeCode}} {{sop.technician.fName}}
+								{{sop.technician.lName}}</td>
+							<td class="text-center rowText">{{sop.issue}}</td>
+							<td class="text-center rowText">{{sop.primaryStatus}}</td>
+							<td class="text-center rowText">{{sop.secondaryStatus}}</td>
+							<td class="text-center rowText">{{sop.status}}</td>
+
+
+							<td class="text-center" style="width: 20%;">
+								<!-- <button type="button"class="waves-effect waves-light btn-sm"  ></button> -->
+								<!--                                              <md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-edit'  id="tooltip-touch" title="Edit" ng-click="vm.edit(order)" style="font-size:20px;color:#2E4053;"></i></md-button>
+ --> <md-button class="md-icon-button btn-sm" aria-label="Favorite" ng-disabled="sop.primaryStatus!='Completed'"
+									style="margin:0 0.5px;"> <i
+									class="fa fa-file-pdf-o" id="tooltip-touch"
+									title="Create Offer" ng-click="vm.createOffer(sop)"
+									style="font-size: 20px; color: #2E86C1;"></i></md-button> 
+									
+									<md-button class="md-icon-button btn-sm" aria-label="Favorite" ng-disabled="sop.primaryStatus!='Completed'"
+									style="margin:0 0.5px;"> <i
+									class="fa fa-file-pdf-o" id="tooltip-touch"
+									title="Inspection Report" ng-click="vm.createInspectionReport(sop)"
+									style="font-size: 20px; color: #2E86C1;"></i></md-button> 
+									
+									
+								<!-- 	<md-button
+									class="md-icon-button btn-sm" aria-label="Favorite"
+									style="margin:0 0.5px;"> <i class='fas fa-edit'
+									id="tooltip-touch" title="Inspection Report"
+									ng-click="vm.createInspectionReport(sop)"
+									style="font-size: 20px; color: #2E86C1;"></i></md-button> -->
+									
+									
+									
+									
+									<md-button
+									class="md-icon-button btn-sm" aria-label="Favorite"
+									style="margin:0 0.5px;"> <i class='fas fa-edit'
+									id="tooltip-touch" title="Update SOP"
+									ng-click="vm.getSopDetials(sop)"
+									style="font-size: 20px; color: #2E86C1;"></i></md-button>
+									
+									
+									
+									
+									
+									
+									
+				<!--					
+									
+									 <md-button
+									class="md-icon-button btn-sm" aria-label="Favorite"
+									style="margin:0 0.5px;"> <i
+									class="mdi-border-color" id="tooltip-touch"
+									title="Change Status" ng-click="vm.getSopDetials(sop)"
+									style="font-size: 20px; color: #2E86C1;"></i></md-button>                                             	 <md-button class="md-icon-button btn-sm" aria-label="Favorite" style="margin:0 0.5px;"><i class='fas fa-trash'  id="tooltip-touch" title="Delet" ng-click="vm.delet(order)" style="font-size:20px;color:#ff0101;"></i></md-button>
+ -->
+
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+				<dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+			</div>
+		</div>
+	</div>
+	<!-- end row -->
+
+
+</div>
+<!-- container -->
+
+</div>
+<!-- content -->
+
+
+</div>
+
+
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+</div>
+
+
+<!-- Required datatable js -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Buttons examples -->
+<script src="plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="plugins/datatables/jszip.min.js"></script>
+<script src="plugins/datatables/pdfmake.min.js"></script>
+<script src="plugins/datatables/vfs_fonts.js"></script>
+<script src="plugins/datatables/buttons.html5.min.js"></script>
+<script src="plugins/datatables/buttons.print.min.js"></script>
+<script src="plugins/datatables/buttons.colVis.min.js"></script>
+
+<!-- Responsive examples -->
+<script src="plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables/responsive.bootstrap4.min.js"></script>

@@ -1,0 +1,161 @@
+ <section style="background-image: url(assets/images/skf_back2.jpg);background-position: center;background-repeat: no-repeat;background-size: cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="wrapper-page">
+
+                            <div class="account-pages">
+                                <div class="account-box">
+                                    <div class="account-logo-box">
+                                        <h2 class="text-uppercase text-center">
+                                            <a href="index.html" class="text-success">
+                                              <img src="image/adplogo.jpg" style="width: 83%;">
+                                            </a>
+                                        </h2>
+                                      <!--   <h5 class="text-uppercase font-bold m-b-5 m-t-50">Sign In</h5>
+                                        <p class="m-b-0">Login to your Admin account</p> -->
+                                    </div>
+                                    <div class="account-content" style="margin-top: 10px; " ng-show="loginPage">
+                                        <form class="form-horizontal" action="#">
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">User Name</label>
+                                                    <input class="form-control" type="text" ng-model="user.userId"id="emailaddress" required="" placeholder="User Name">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12">
+                                                  <!--   <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a> -->
+                                                    <label for="password">Password</label>
+                                                    <input class="form-control" type="password"  ng-model="user.password" required="" id="password" placeholder="Enter your password">
+                                                </div>
+                                            </div>
+
+                           
+
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light"  ng-click="vm.doLogin(user)" type="submit">Sign In</button>
+                                                </div>
+                                            </div>
+													
+										                 <div class="form-group row m-b-20">
+                                             <div class="col-12">
+                                            <div class="row">                                               
+													
+												<div class="col-6" style="margin-left:35%; margin-top:0%">
+												 <a ng-click="forgotPass()"  >
+                                                <span>Forget Password</span>
+                                             </a>
+												</div>
+												</div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                       <!--  <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="text-center">
+                                                    <button type="button" class="btn m-r-5 btn-facebook waves-effect waves-light">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </button>
+                                                    <button type="button" class="btn m-r-5 btn-googleplus waves-effect waves-light">
+                                                        <i class="fa fa-google"></i>
+                                                    </button>
+                                                    <button type="button" class="btn m-r-5 btn-twitter waves-effect waves-light">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                      <div class="row m-t-50">
+                                            <div class="col-sm-12 text-center">
+                                             <p class="text-muted"> Powered By<a href="http://www.a2mee.com/"> <b>A2MEE</b>- Appoint to mee</a></p>
+                                              <img alt="" src="image/a2mee-logo.png">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <!-- Forget Password  functionality start-->
+                                    
+                                     <div class="account-content" style="margin-top: 10px; " ng-show="forgetTab">
+                                        <form class="form-horizontal" action="#">
+
+                                            <div class="form-group m-b-20 row">
+                                                <div class="col-12">
+                                                    <label for="emailaddress">Enter Registered Email Id</label>
+                                                    <input class="form-control" type="text" ng-model="user.emailId"id="emailaddress"  placeholder="Enter Email Id " ng-blur="vm.validateEmailId(user)">
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row m-b-20">
+                                                <div class="col-12" ng-show="setPass">
+                                                  <!--   <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a> -->
+                                                    <label for="password">Enter Password</label>
+                                                    <input ng-if="!viewPass" class="form-control" type="password"  ng-model="user.password"   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required="" id="password" placeholder="Enter your password" ng-blur="passwordEnter(user.password)">
+                                                      <input   ng-if="viewPass"class="form-control" type="text"  ng-model="user.password" required="" id="password" placeholder="Enter your password"ng-blur="passwordEnter(user.password)">
+                                                       <button class="btn btn-primary btn-sm"  ng-click="show()" type="submit"> <i class="fa fa-eye" ng-show="!viewPass" ></i> <i class="fa fa-eye-slash" ng-show="viewPass"></i></button>
+                                               
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row text-center m-t-10">
+                                                <div class="col-12">
+                                                    <button class="btn btn-md btn-block btn-primary waves-effect waves-light"  ng-click="vm.updatePassword(user.password)"  ng-disabled="saveButton" type="submit">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-6" style="margin-left:40%; margin-top:0%">
+												 <a ng-click="loginScr()"  >
+                                               			 <span>Login</span>
+                                             </a>
+												</div>
+													
+                                        </form>
+
+                                       <!--  <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="text-center">
+                                                    <button type="button" class="btn m-r-5 btn-facebook waves-effect waves-light">
+                                                        <i class="fa fa-facebook"></i>
+                                                    </button>
+                                                    <button type="button" class="btn m-r-5 btn-googleplus waves-effect waves-light">
+                                                        <i class="fa fa-google"></i>
+                                                    </button>
+                                                    <button type="button" class="btn m-r-5 btn-twitter waves-effect waves-light">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                      <div class="row m-t-50">
+                                            <div class="col-sm-12 text-center">
+                                             <p class="text-muted"> Powered By<a href="http://www.a2mee.com/"> <b>A2MEE</b>- Appoint to mee</a></p>
+                                              <a href="http://www.a2mee.com/"><img alt="" src="image/a2mee-logo.png"></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                        <!-- Forget Password  functionality endt-->
+                                    
+                                    
+                                </div>
+                            </div>
+                            <!-- end card-box-->
+
+                        </div>
+                        <!-- end wrapper -->
+
+                    </div>
+                </div>
+            </div>
+          </section>
+          <!-- END HOME -->
